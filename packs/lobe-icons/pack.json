@@ -1,0 +1,669 @@
+{
+  "schema": 1,
+  "id": "lobe-icons",
+  "name": "Lobe Icons",
+  "version": "1.0.0",
+  "author": "si-mods (icons: lobehub/lobe-icons, MIT)",
+  "programs": {
+    "aliyun": {
+      "icon": "icons/alibabacloud-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "amp": {
+      "icon": "icons/amp-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "anyscale": {
+      "icon": "icons/anyscale-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "appwrite": {
+      "icon": "icons/appwrite-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "aws": {
+      "icon": "icons/aws-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "aws-vault": {
+      "icon": "icons/aws-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "az": {
+      "icon": "icons/azure-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "bailian": {
+      "icon": "icons/bailian-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "biliup": {
+      "icon": "icons/bilibili-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "bilix": {
+      "icon": "icons/bilibili-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "bq": {
+      "icon": "icons/googlecloud-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "chatglm": {
+      "icon": "icons/chatglm-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "claude": {
+      "icon": "icons/claudecode-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "cloudflared": {
+      "icon": "icons/cloudflare-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "codebuddy": {
+      "icon": "icons/codebuddy-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "cohere": {
+      "icon": "icons/cohere-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "comfy": {
+      "icon": "icons/comfyui-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "comfyui": {
+      "icon": "icons/comfyui-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "copilot": {
+      "icon": "icons/copilot-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "crewai": {
+      "icon": "icons/crewai-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "cursor": {
+      "icon": "icons/cursor.svg",
+      "mode": "mono",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "dashscope": {
+      "icon": "icons/bailian-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "deepinfra": {
+      "icon": "icons/deepinfra-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "deepl": {
+      "icon": "icons/deepl-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "deepseek": {
+      "icon": "icons/deepseek-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "devin": {
+      "icon": "icons/devin-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "doctl": {
+      "icon": "icons/digitalocean.svg",
+      "mode": "mono",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "doubao": {
+      "icon": "icons/doubao-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "exa": {
+      "icon": "icons/exa-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "fal": {
+      "icon": "icons/fal-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "firecrawl": {
+      "icon": "icons/firecrawl-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "firectl": {
+      "icon": "icons/fireworks-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "fireworks": {
+      "icon": "icons/fireworks-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "gcloud": {
+      "icon": "icons/googlecloud-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "gemini": {
+      "icon": "icons/geminicli-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "gh": {
+      "icon": "icons/github.svg",
+      "mode": "mono",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "gh copilot": {
+      "icon": "icons/githubcopilot.svg",
+      "mode": "mono",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "github": {
+      "icon": "icons/github.svg",
+      "mode": "mono",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "glm": {
+      "icon": "icons/chatglm-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "goose": {
+      "icon": "icons/goose.svg",
+      "mode": "mono",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "gradio": {
+      "icon": "icons/gradio-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "greptile": {
+      "icon": "icons/greptile-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "grok": {
+      "icon": "icons/grok.svg",
+      "mode": "mono",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "groq": {
+      "icon": "icons/groq.svg",
+      "mode": "mono",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "gsutil": {
+      "icon": "icons/googlecloud-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "hf": {
+      "icon": "icons/huggingface-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "hub": {
+      "icon": "icons/github.svg",
+      "mode": "mono",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "huggingface": {
+      "icon": "icons/huggingface-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "huggingface-cli": {
+      "icon": "icons/huggingface-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "hunyuan": {
+      "icon": "icons/hunyuan-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "jina": {
+      "icon": "icons/jina.svg",
+      "mode": "mono",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "junie": {
+      "icon": "icons/junie-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "kimi": {
+      "icon": "icons/kimi-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "kiro": {
+      "icon": "icons/kiro-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "kiro-cli": {
+      "icon": "icons/kiro-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "langchain": {
+      "icon": "icons/langchain-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "langgraph": {
+      "icon": "icons/langgraph-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "lep": {
+      "icon": "icons/leptonai-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "livekit": {
+      "icon": "icons/livekit-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "lk": {
+      "icon": "icons/livekit-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "llava": {
+      "icon": "icons/llava-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "lms": {
+      "icon": "icons/lmstudio.svg",
+      "mode": "mono",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "lmstudio": {
+      "icon": "icons/lmstudio.svg",
+      "mode": "mono",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "mastra": {
+      "icon": "icons/mastra.svg",
+      "mode": "mono",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "mcp": {
+      "icon": "icons/mcp.svg",
+      "mode": "mono",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "mcp-inspector": {
+      "icon": "icons/mcp.svg",
+      "mode": "mono",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "minimax": {
+      "icon": "icons/minimax-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "mistral": {
+      "icon": "icons/mistral-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "modelscope": {
+      "icon": "icons/modelscope-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "moonshot": {
+      "icon": "icons/moonshot.svg",
+      "mode": "mono",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "morph": {
+      "icon": "icons/morph-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "n8n": {
+      "icon": "icons/n8n-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "nebius": {
+      "icon": "icons/nebius.svg",
+      "mode": "mono",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "nvidia-smi": {
+      "icon": "icons/nvidia-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "nvtop": {
+      "icon": "icons/nvidia-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "ollama": {
+      "icon": "icons/ollama.svg",
+      "mode": "mono",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "open-webui": {
+      "icon": "icons/openwebui.svg",
+      "mode": "mono",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "openai": {
+      "icon": "icons/openai.svg",
+      "mode": "mono",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "opencode": {
+      "icon": "icons/opencode.svg",
+      "mode": "mono",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "openhands": {
+      "icon": "icons/openhands-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "openrouter": {
+      "icon": "icons/openrouter-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "perplexity": {
+      "icon": "icons/perplexity-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "qiniu": {
+      "icon": "icons/qiniu-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "qoder": {
+      "icon": "icons/qoder-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "qshell": {
+      "icon": "icons/qiniu-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "qwen": {
+      "icon": "icons/qwen-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "railway": {
+      "icon": "icons/railway.svg",
+      "mode": "mono",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "replicate": {
+      "icon": "icons/replicate.svg",
+      "mode": "mono",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "replit": {
+      "icon": "icons/replit-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "rsshub": {
+      "icon": "icons/rsshub-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "rwkv": {
+      "icon": "icons/rwkv-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "smithery": {
+      "icon": "icons/smithery-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "snow": {
+      "icon": "icons/snowflake-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "snowsql": {
+      "icon": "icons/snowflake-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "tavily": {
+      "icon": "icons/tavily-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "tccli": {
+      "icon": "icons/tencentcloud-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "together": {
+      "icon": "icons/together-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "unsloth": {
+      "icon": "icons/unsloth-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "unstructured": {
+      "icon": "icons/unstructured-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "vc": {
+      "icon": "icons/vercel.svg",
+      "mode": "mono",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "vercel": {
+      "icon": "icons/vercel.svg",
+      "mode": "mono",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "vllm": {
+      "icon": "icons/vllm-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "volc": {
+      "icon": "icons/volcengine-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "wandb": {
+      "icon": "icons/wandb-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "wrangler": {
+      "icon": "icons/cloudflare-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "xai": {
+      "icon": "icons/xai.svg",
+      "mode": "mono",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "xinference": {
+      "icon": "icons/xinference-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "zai": {
+      "icon": "icons/zai.svg",
+      "mode": "mono",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "zapier": {
+      "icon": "icons/zapier-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "zeabur": {
+      "icon": "icons/zeabur-color.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    }
+  }
+}

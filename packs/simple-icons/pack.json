@@ -1,0 +1,2009 @@
+{
+  "schema": 1,
+  "id": "simple-icons",
+  "name": "Simple Icons",
+  "version": "1.0.0",
+  "author": "si-mods (icons: simpleicons.org)",
+  "programs": {
+    "act": {
+      "icon": "icons/githubactions.svg",
+      "mode": "mono",
+      "bg": "#2088FF",
+      "fg": "#ffffff"
+    },
+    "adb": {
+      "icon": "icons/android.svg",
+      "mode": "mono",
+      "bg": "#3DDC84",
+      "fg": "#14181f"
+    },
+    "aliyun": {
+      "icon": "icons/alibabacloud.svg",
+      "mode": "mono",
+      "bg": "#FF6A00",
+      "fg": "#ffffff"
+    },
+    "ansible": {
+      "icon": "icons/ansible.svg",
+      "mode": "mono",
+      "bg": "#EE0000",
+      "fg": "#ffffff"
+    },
+    "ansible-playbook": {
+      "icon": "icons/ansible.svg",
+      "mode": "mono",
+      "bg": "#EE0000",
+      "fg": "#ffffff"
+    },
+    "apachectl": {
+      "icon": "icons/apache.svg",
+      "mode": "mono",
+      "bg": "#D22128",
+      "fg": "#ffffff"
+    },
+    "apk": {
+      "icon": "icons/alpinelinux.svg",
+      "mode": "mono",
+      "bg": "#0D597F",
+      "fg": "#ffffff"
+    },
+    "apt": {
+      "icon": "icons/debian.svg",
+      "mode": "mono",
+      "bg": "#A81D33",
+      "fg": "#ffffff"
+    },
+    "apt-get": {
+      "icon": "icons/debian.svg",
+      "mode": "mono",
+      "bg": "#A81D33",
+      "fg": "#ffffff"
+    },
+    "argocd": {
+      "icon": "icons/argo.svg",
+      "mode": "mono",
+      "bg": "#EF7B4D",
+      "fg": "#14181f"
+    },
+    "astro": {
+      "icon": "icons/astro.svg",
+      "mode": "mono",
+      "bg": "#BC52EE",
+      "fg": "#ffffff"
+    },
+    "babel": {
+      "icon": "icons/babel.svg",
+      "mode": "mono",
+      "bg": "#F9DC3E",
+      "fg": "#14181f"
+    },
+    "bash": {
+      "icon": "icons/gnubash.svg",
+      "mode": "mono",
+      "bg": "#4EAA25",
+      "fg": "#ffffff"
+    },
+    "bazel": {
+      "icon": "icons/bazel.svg",
+      "mode": "mono",
+      "bg": "#43A047",
+      "fg": "#ffffff"
+    },
+    "biome": {
+      "icon": "icons/biome.svg",
+      "mode": "mono",
+      "bg": "#60A5FA",
+      "fg": "#14181f"
+    },
+    "bq": {
+      "icon": "icons/googlecloud.svg",
+      "mode": "mono",
+      "bg": "#4285F4",
+      "fg": "#ffffff"
+    },
+    "brew": {
+      "icon": "icons/homebrew.svg",
+      "mode": "mono",
+      "bg": "#FBB040",
+      "fg": "#14181f"
+    },
+    "buildkite": {
+      "icon": "icons/buildkite.svg",
+      "mode": "mono",
+      "bg": "#14CC80",
+      "fg": "#14181f"
+    },
+    "bun": {
+      "icon": "icons/bun.svg",
+      "mode": "mono",
+      "bg": "#000000",
+      "fg": "#ffffff",
+      "dark": {
+        "bg": "#eceff3",
+        "fg": "#000000"
+      }
+    },
+    "burp": {
+      "icon": "icons/burpsuite.svg",
+      "mode": "mono",
+      "bg": "#FF6633",
+      "fg": "#ffffff"
+    },
+    "cabal": {
+      "icon": "icons/haskell.svg",
+      "mode": "mono",
+      "bg": "#5D4F85",
+      "fg": "#ffffff"
+    },
+    "caddy": {
+      "icon": "icons/caddy.svg",
+      "mode": "mono",
+      "bg": "#1F88C0",
+      "fg": "#ffffff"
+    },
+    "cargo": {
+      "icon": "icons/rust.svg",
+      "mode": "mono",
+      "bg": "#000000",
+      "fg": "#ffffff",
+      "dark": {
+        "bg": "#eceff3",
+        "fg": "#000000"
+      }
+    },
+    "chef": {
+      "icon": "icons/chef.svg",
+      "mode": "mono",
+      "bg": "#F09820",
+      "fg": "#14181f"
+    },
+    "choco": {
+      "icon": "icons/chocolatey.svg",
+      "mode": "mono",
+      "bg": "#80B5E3",
+      "fg": "#14181f"
+    },
+    "circleci": {
+      "icon": "icons/circleci.svg",
+      "mode": "mono",
+      "bg": "#343434",
+      "fg": "#ffffff",
+      "dark": {
+        "bg": "#eceff3",
+        "fg": "#343434"
+      }
+    },
+    "claude": {
+      "icon": "icons/claudecode.svg",
+      "mode": "mono",
+      "bg": "#D97757",
+      "fg": "#ffffff"
+    },
+    "clickhouse": {
+      "icon": "icons/clickhouse.svg",
+      "mode": "mono",
+      "bg": "#FFCC01",
+      "fg": "#14181f"
+    },
+    "clj": {
+      "icon": "icons/clojure.svg",
+      "mode": "mono",
+      "bg": "#5881D8",
+      "fg": "#ffffff"
+    },
+    "clojure": {
+      "icon": "icons/clojure.svg",
+      "mode": "mono",
+      "bg": "#5881D8",
+      "fg": "#ffffff"
+    },
+    "cloudflared": {
+      "icon": "icons/cloudflare.svg",
+      "mode": "mono",
+      "bg": "#F38020",
+      "fg": "#14181f"
+    },
+    "cmake": {
+      "icon": "icons/cmake.svg",
+      "mode": "mono",
+      "bg": "#064F8C",
+      "fg": "#ffffff"
+    },
+    "cockroach": {
+      "icon": "icons/cockroachlabs.svg",
+      "mode": "mono",
+      "bg": "#6933FF",
+      "fg": "#ffffff"
+    },
+    "code": {
+      "icon": "icons/vscodium.svg",
+      "mode": "mono",
+      "bg": "#2F80ED",
+      "fg": "#ffffff"
+    },
+    "conda": {
+      "icon": "icons/anaconda.svg",
+      "mode": "mono",
+      "bg": "#44A833",
+      "fg": "#ffffff"
+    },
+    "consul": {
+      "icon": "icons/consul.svg",
+      "mode": "mono",
+      "bg": "#F24C53",
+      "fg": "#ffffff"
+    },
+    "copilot": {
+      "icon": "icons/githubcopilot.svg",
+      "mode": "mono",
+      "bg": "#000000",
+      "fg": "#ffffff",
+      "dark": {
+        "bg": "#eceff3",
+        "fg": "#000000"
+      }
+    },
+    "cqlsh": {
+      "icon": "icons/apachecassandra.svg",
+      "mode": "mono",
+      "bg": "#1287B1",
+      "fg": "#ffffff"
+    },
+    "crystal": {
+      "icon": "icons/crystal.svg",
+      "mode": "mono",
+      "bg": "#000000",
+      "fg": "#ffffff",
+      "dark": {
+        "bg": "#eceff3",
+        "fg": "#000000"
+      }
+    },
+    "ctest": {
+      "icon": "icons/cmake.svg",
+      "mode": "mono",
+      "bg": "#064F8C",
+      "fg": "#ffffff"
+    },
+    "curl": {
+      "icon": "icons/curl.svg",
+      "mode": "mono",
+      "bg": "#073551",
+      "fg": "#ffffff"
+    },
+    "cursor": {
+      "icon": "icons/cursor.svg",
+      "mode": "mono",
+      "bg": "#000000",
+      "fg": "#ffffff",
+      "dark": {
+        "bg": "#eceff3",
+        "fg": "#000000"
+      }
+    },
+    "cypher-shell": {
+      "icon": "icons/neo4j.svg",
+      "mode": "mono",
+      "bg": "#4581C3",
+      "fg": "#ffffff"
+    },
+    "cypress": {
+      "icon": "icons/cypress.svg",
+      "mode": "mono",
+      "bg": "#69D3A7",
+      "fg": "#14181f"
+    },
+    "dart": {
+      "icon": "icons/dart.svg",
+      "mode": "mono",
+      "bg": "#0175C2",
+      "fg": "#ffffff"
+    },
+    "datadog-ci": {
+      "icon": "icons/datadog.svg",
+      "mode": "mono",
+      "bg": "#632CA6",
+      "fg": "#ffffff"
+    },
+    "deepseek": {
+      "icon": "icons/deepseek.svg",
+      "mode": "mono",
+      "bg": "#5786FE",
+      "fg": "#ffffff"
+    },
+    "deno": {
+      "icon": "icons/deno.svg",
+      "mode": "mono",
+      "bg": "#000000",
+      "fg": "#ffffff",
+      "dark": {
+        "bg": "#eceff3",
+        "fg": "#000000"
+      }
+    },
+    "dnf": {
+      "icon": "icons/fedora.svg",
+      "mode": "mono",
+      "bg": "#51A2DA",
+      "fg": "#14181f"
+    },
+    "docker": {
+      "icon": "icons/docker.svg",
+      "mode": "mono",
+      "bg": "#2496ED",
+      "fg": "#ffffff"
+    },
+    "docker compose": {
+      "icon": "icons/docker.svg",
+      "mode": "mono",
+      "bg": "#2496ED",
+      "fg": "#ffffff"
+    },
+    "doctl": {
+      "icon": "icons/digitalocean.svg",
+      "mode": "mono",
+      "bg": "#0080FF",
+      "fg": "#ffffff"
+    },
+    "docusaurus": {
+      "icon": "icons/docusaurus.svg",
+      "mode": "mono",
+      "bg": "#3ECC5F",
+      "fg": "#14181f"
+    },
+    "dotnet": {
+      "icon": "icons/dotnet.svg",
+      "mode": "mono",
+      "bg": "#512BD4",
+      "fg": "#ffffff"
+    },
+    "dpkg": {
+      "icon": "icons/debian.svg",
+      "mode": "mono",
+      "bg": "#A81D33",
+      "fg": "#ffffff"
+    },
+    "duckdb": {
+      "icon": "icons/duckdb.svg",
+      "mode": "mono",
+      "bg": "#FFF000",
+      "fg": "#14181f"
+    },
+    "eas": {
+      "icon": "icons/expo.svg",
+      "mode": "mono",
+      "bg": "#1C2024",
+      "fg": "#ffffff"
+    },
+    "elasticsearch": {
+      "icon": "icons/elasticsearch.svg",
+      "mode": "mono",
+      "bg": "#005571",
+      "fg": "#ffffff"
+    },
+    "electron": {
+      "icon": "icons/electron.svg",
+      "mode": "mono",
+      "bg": "#47848F",
+      "fg": "#ffffff"
+    },
+    "elixir": {
+      "icon": "icons/elixir.svg",
+      "mode": "mono",
+      "bg": "#8847B9",
+      "fg": "#ffffff"
+    },
+    "emacs": {
+      "icon": "icons/gnuemacs.svg",
+      "mode": "mono",
+      "bg": "#7F5AB6",
+      "fg": "#ffffff"
+    },
+    "emerge": {
+      "icon": "icons/gentoo.svg",
+      "mode": "mono",
+      "bg": "#54487A",
+      "fg": "#ffffff"
+    },
+    "erl": {
+      "icon": "icons/erlang.svg",
+      "mode": "mono",
+      "bg": "#A90533",
+      "fg": "#ffffff"
+    },
+    "esbuild": {
+      "icon": "icons/esbuild.svg",
+      "mode": "mono",
+      "bg": "#FFCF00",
+      "fg": "#14181f"
+    },
+    "eslint": {
+      "icon": "icons/eslint.svg",
+      "mode": "mono",
+      "bg": "#4B32C3",
+      "fg": "#ffffff"
+    },
+    "expo": {
+      "icon": "icons/expo.svg",
+      "mode": "mono",
+      "bg": "#1C2024",
+      "fg": "#ffffff"
+    },
+    "fastboot": {
+      "icon": "icons/android.svg",
+      "mode": "mono",
+      "bg": "#3DDC84",
+      "fg": "#14181f"
+    },
+    "ffmpeg": {
+      "icon": "icons/ffmpeg.svg",
+      "mode": "mono",
+      "bg": "#007808",
+      "fg": "#ffffff"
+    },
+    "ffplay": {
+      "icon": "icons/ffmpeg.svg",
+      "mode": "mono",
+      "bg": "#007808",
+      "fg": "#ffffff"
+    },
+    "ffprobe": {
+      "icon": "icons/ffmpeg.svg",
+      "mode": "mono",
+      "bg": "#007808",
+      "fg": "#ffffff"
+    },
+    "firebase": {
+      "icon": "icons/firebase.svg",
+      "mode": "mono",
+      "bg": "#DD2C00",
+      "fg": "#ffffff"
+    },
+    "fish": {
+      "icon": "icons/fishshell.svg",
+      "mode": "mono",
+      "bg": "#34C534",
+      "fg": "#14181f"
+    },
+    "fishshell": {
+      "icon": "icons/fishshell.svg",
+      "mode": "mono",
+      "bg": "#34C534",
+      "fg": "#14181f"
+    },
+    "flatpak": {
+      "icon": "icons/flatpak.svg",
+      "mode": "mono",
+      "bg": "#4A90D9",
+      "fg": "#ffffff"
+    },
+    "flutter": {
+      "icon": "icons/flutter.svg",
+      "mode": "mono",
+      "bg": "#02569B",
+      "fg": "#ffffff"
+    },
+    "flux": {
+      "icon": "icons/flux.svg",
+      "mode": "mono",
+      "bg": "#5468FF",
+      "fg": "#ffffff"
+    },
+    "fly": {
+      "icon": "icons/flydotio.svg",
+      "mode": "mono",
+      "bg": "#24175B",
+      "fg": "#ffffff"
+    },
+    "flyctl": {
+      "icon": "icons/flydotio.svg",
+      "mode": "mono",
+      "bg": "#24175B",
+      "fg": "#ffffff"
+    },
+    "fossil": {
+      "icon": "icons/fossilscm.svg",
+      "mode": "mono",
+      "bg": "#548294",
+      "fg": "#ffffff"
+    },
+    "gatsby": {
+      "icon": "icons/gatsby.svg",
+      "mode": "mono",
+      "bg": "#663399",
+      "fg": "#ffffff"
+    },
+    "gcloud": {
+      "icon": "icons/googlecloud.svg",
+      "mode": "mono",
+      "bg": "#4285F4",
+      "fg": "#ffffff"
+    },
+    "gemini": {
+      "icon": "icons/googlegemini.svg",
+      "mode": "mono",
+      "bg": "#8E75B2",
+      "fg": "#ffffff"
+    },
+    "gfortran": {
+      "icon": "icons/fortran.svg",
+      "mode": "mono",
+      "bg": "#734F96",
+      "fg": "#ffffff"
+    },
+    "gh": {
+      "icon": "icons/github.svg",
+      "mode": "mono",
+      "bg": "#181717",
+      "fg": "#ffffff",
+      "dark": {
+        "bg": "#eceff3",
+        "fg": "#181717"
+      }
+    },
+    "gh copilot": {
+      "icon": "icons/githubcopilot.svg",
+      "mode": "mono",
+      "bg": "#000000",
+      "fg": "#ffffff",
+      "dark": {
+        "bg": "#eceff3",
+        "fg": "#000000"
+      }
+    },
+    "gh run": {
+      "icon": "icons/githubactions.svg",
+      "mode": "mono",
+      "bg": "#2088FF",
+      "fg": "#ffffff"
+    },
+    "ghc": {
+      "icon": "icons/haskell.svg",
+      "mode": "mono",
+      "bg": "#5D4F85",
+      "fg": "#ffffff"
+    },
+    "ghci": {
+      "icon": "icons/haskell.svg",
+      "mode": "mono",
+      "bg": "#5D4F85",
+      "fg": "#ffffff"
+    },
+    "git": {
+      "icon": "icons/git.svg",
+      "mode": "mono",
+      "bg": "#F03C2E",
+      "fg": "#ffffff"
+    },
+    "gitk": {
+      "icon": "icons/git.svg",
+      "mode": "mono",
+      "bg": "#F03C2E",
+      "fg": "#ffffff"
+    },
+    "gitui": {
+      "icon": "icons/git.svg",
+      "mode": "mono",
+      "bg": "#F03C2E",
+      "fg": "#ffffff"
+    },
+    "glab": {
+      "icon": "icons/gitlab.svg",
+      "mode": "mono",
+      "bg": "#FC6D26",
+      "fg": "#ffffff"
+    },
+    "go": {
+      "icon": "icons/go.svg",
+      "mode": "mono",
+      "bg": "#00ADD8",
+      "fg": "#14181f"
+    },
+    "gofmt": {
+      "icon": "icons/go.svg",
+      "mode": "mono",
+      "bg": "#00ADD8",
+      "fg": "#14181f"
+    },
+    "gradle": {
+      "icon": "icons/gradle.svg",
+      "mode": "mono",
+      "bg": "#02303A",
+      "fg": "#ffffff"
+    },
+    "gradlew": {
+      "icon": "icons/gradle.svg",
+      "mode": "mono",
+      "bg": "#02303A",
+      "fg": "#ffffff"
+    },
+    "grafana": {
+      "icon": "icons/grafana.svg",
+      "mode": "mono",
+      "bg": "#F46800",
+      "fg": "#ffffff"
+    },
+    "grafana-cli": {
+      "icon": "icons/grafana.svg",
+      "mode": "mono",
+      "bg": "#F46800",
+      "fg": "#ffffff"
+    },
+    "groovy": {
+      "icon": "icons/apachegroovy.svg",
+      "mode": "mono",
+      "bg": "#4298B8",
+      "fg": "#ffffff"
+    },
+    "gsutil": {
+      "icon": "icons/googlecloud.svg",
+      "mode": "mono",
+      "bg": "#4285F4",
+      "fg": "#ffffff"
+    },
+    "haproxy": {
+      "icon": "icons/haproxy.svg",
+      "mode": "mono",
+      "bg": "#169BD6",
+      "fg": "#ffffff"
+    },
+    "hcloud": {
+      "icon": "icons/hetzner.svg",
+      "mode": "mono",
+      "bg": "#D50C2D",
+      "fg": "#ffffff"
+    },
+    "helix": {
+      "icon": "icons/helix.svg",
+      "mode": "mono",
+      "bg": "#281733",
+      "fg": "#ffffff"
+    },
+    "helm": {
+      "icon": "icons/helm.svg",
+      "mode": "mono",
+      "bg": "#0F1689",
+      "fg": "#ffffff"
+    },
+    "helmfile": {
+      "icon": "icons/helm.svg",
+      "mode": "mono",
+      "bg": "#0F1689",
+      "fg": "#ffffff"
+    },
+    "hf": {
+      "icon": "icons/huggingface.svg",
+      "mode": "mono",
+      "bg": "#FFD21E",
+      "fg": "#14181f"
+    },
+    "hg": {
+      "icon": "icons/mercurial.svg",
+      "mode": "mono",
+      "bg": "#999999",
+      "fg": "#ffffff"
+    },
+    "home-manager": {
+      "icon": "icons/nixos.svg",
+      "mode": "mono",
+      "bg": "#5277C3",
+      "fg": "#ffffff"
+    },
+    "htop": {
+      "icon": "icons/htop.svg",
+      "mode": "mono",
+      "bg": "#009020",
+      "fg": "#ffffff"
+    },
+    "http": {
+      "icon": "icons/httpie.svg",
+      "mode": "mono",
+      "bg": "#73DC8C",
+      "fg": "#14181f"
+    },
+    "httpd": {
+      "icon": "icons/apache.svg",
+      "mode": "mono",
+      "bg": "#D22128",
+      "fg": "#ffffff"
+    },
+    "httpie": {
+      "icon": "icons/httpie.svg",
+      "mode": "mono",
+      "bg": "#73DC8C",
+      "fg": "#14181f"
+    },
+    "https": {
+      "icon": "icons/httpie.svg",
+      "mode": "mono",
+      "bg": "#73DC8C",
+      "fg": "#14181f"
+    },
+    "hub": {
+      "icon": "icons/github.svg",
+      "mode": "mono",
+      "bg": "#181717",
+      "fg": "#ffffff",
+      "dark": {
+        "bg": "#eceff3",
+        "fg": "#181717"
+      }
+    },
+    "huggingface-cli": {
+      "icon": "icons/huggingface.svg",
+      "mode": "mono",
+      "bg": "#FFD21E",
+      "fg": "#14181f"
+    },
+    "hugo": {
+      "icon": "icons/hugo.svg",
+      "mode": "mono",
+      "bg": "#FF4088",
+      "fg": "#ffffff"
+    },
+    "hx": {
+      "icon": "icons/helix.svg",
+      "mode": "mono",
+      "bg": "#281733",
+      "fg": "#ffffff"
+    },
+    "iex": {
+      "icon": "icons/elixir.svg",
+      "mode": "mono",
+      "bg": "#8847B9",
+      "fg": "#ffffff"
+    },
+    "influx": {
+      "icon": "icons/influxdb.svg",
+      "mode": "mono",
+      "bg": "#22ADF6",
+      "fg": "#14181f"
+    },
+    "ipython": {
+      "icon": "icons/python.svg",
+      "mode": "mono",
+      "bg": "#3776AB",
+      "fg": "#ffffff"
+    },
+    "istioctl": {
+      "icon": "icons/istio.svg",
+      "mode": "mono",
+      "bg": "#466BB0",
+      "fg": "#ffffff"
+    },
+    "java": {
+      "icon": "icons/openjdk.svg",
+      "mode": "mono",
+      "bg": "#000000",
+      "fg": "#ffffff",
+      "dark": {
+        "bg": "#eceff3",
+        "fg": "#000000"
+      }
+    },
+    "javac": {
+      "icon": "icons/openjdk.svg",
+      "mode": "mono",
+      "bg": "#000000",
+      "fg": "#ffffff",
+      "dark": {
+        "bg": "#eceff3",
+        "fg": "#000000"
+      }
+    },
+    "jekyll": {
+      "icon": "icons/jekyll.svg",
+      "mode": "mono",
+      "bg": "#CC0000",
+      "fg": "#ffffff"
+    },
+    "jenkins": {
+      "icon": "icons/jenkins.svg",
+      "mode": "mono",
+      "bg": "#D24939",
+      "fg": "#ffffff"
+    },
+    "jest": {
+      "icon": "icons/jest.svg",
+      "mode": "mono",
+      "bg": "#C21325",
+      "fg": "#ffffff"
+    },
+    "jira": {
+      "icon": "icons/jirasoftware.svg",
+      "mode": "mono",
+      "bg": "#0052CC",
+      "fg": "#ffffff"
+    },
+    "julia": {
+      "icon": "icons/julia.svg",
+      "mode": "mono",
+      "bg": "#9558B2",
+      "fg": "#ffffff"
+    },
+    "jupyter": {
+      "icon": "icons/jupyter.svg",
+      "mode": "mono",
+      "bg": "#F37626",
+      "fg": "#14181f"
+    },
+    "k3s": {
+      "icon": "icons/k3s.svg",
+      "mode": "mono",
+      "bg": "#FFC61C",
+      "fg": "#14181f"
+    },
+    "k9s": {
+      "icon": "icons/kubernetes.svg",
+      "mode": "mono",
+      "bg": "#326CE5",
+      "fg": "#ffffff"
+    },
+    "kafka": {
+      "icon": "icons/apachekafka.svg",
+      "mode": "mono",
+      "bg": "#231F20",
+      "fg": "#ffffff",
+      "dark": {
+        "bg": "#eceff3",
+        "fg": "#231F20"
+      }
+    },
+    "kibana": {
+      "icon": "icons/kibana.svg",
+      "mode": "mono",
+      "bg": "#005571",
+      "fg": "#ffffff"
+    },
+    "kn": {
+      "icon": "icons/knative.svg",
+      "mode": "mono",
+      "bg": "#0865AD",
+      "fg": "#ffffff"
+    },
+    "knife": {
+      "icon": "icons/chef.svg",
+      "mode": "mono",
+      "bg": "#F09820",
+      "fg": "#14181f"
+    },
+    "kong": {
+      "icon": "icons/kong.svg",
+      "mode": "mono",
+      "bg": "#003459",
+      "fg": "#ffffff"
+    },
+    "kotlin": {
+      "icon": "icons/kotlin.svg",
+      "mode": "mono",
+      "bg": "#7F52FF",
+      "fg": "#ffffff"
+    },
+    "kotlinc": {
+      "icon": "icons/kotlin.svg",
+      "mode": "mono",
+      "bg": "#7F52FF",
+      "fg": "#ffffff"
+    },
+    "kubectl": {
+      "icon": "icons/kubernetes.svg",
+      "mode": "mono",
+      "bg": "#326CE5",
+      "fg": "#ffffff"
+    },
+    "kubectx": {
+      "icon": "icons/kubernetes.svg",
+      "mode": "mono",
+      "bg": "#326CE5",
+      "fg": "#ffffff"
+    },
+    "kubens": {
+      "icon": "icons/kubernetes.svg",
+      "mode": "mono",
+      "bg": "#326CE5",
+      "fg": "#ffffff"
+    },
+    "kustomize": {
+      "icon": "icons/kubernetes.svg",
+      "mode": "mono",
+      "bg": "#326CE5",
+      "fg": "#ffffff"
+    },
+    "lazydocker": {
+      "icon": "icons/docker.svg",
+      "mode": "mono",
+      "bg": "#2496ED",
+      "fg": "#ffffff"
+    },
+    "lazygit": {
+      "icon": "icons/git.svg",
+      "mode": "mono",
+      "bg": "#F03C2E",
+      "fg": "#ffffff"
+    },
+    "lein": {
+      "icon": "icons/clojure.svg",
+      "mode": "mono",
+      "bg": "#5881D8",
+      "fg": "#ffffff"
+    },
+    "lms": {
+      "icon": "icons/lmstudio.svg",
+      "mode": "mono",
+      "bg": "#000000",
+      "fg": "#ffffff",
+      "dark": {
+        "bg": "#eceff3",
+        "fg": "#000000"
+      }
+    },
+    "lmstudio": {
+      "icon": "icons/lmstudio.svg",
+      "mode": "mono",
+      "bg": "#000000",
+      "fg": "#ffffff",
+      "dark": {
+        "bg": "#eceff3",
+        "fg": "#000000"
+      }
+    },
+    "logstash": {
+      "icon": "icons/logstash.svg",
+      "mode": "mono",
+      "bg": "#005571",
+      "fg": "#ffffff"
+    },
+    "lua": {
+      "icon": "icons/lua.svg",
+      "mode": "mono",
+      "bg": "#000080",
+      "fg": "#ffffff"
+    },
+    "luajit": {
+      "icon": "icons/lua.svg",
+      "mode": "mono",
+      "bg": "#000080",
+      "fg": "#ffffff"
+    },
+    "mamba": {
+      "icon": "icons/anaconda.svg",
+      "mode": "mono",
+      "bg": "#44A833",
+      "fg": "#ffffff"
+    },
+    "mariadb": {
+      "icon": "icons/mariadb.svg",
+      "mode": "mono",
+      "bg": "#003545",
+      "fg": "#ffffff"
+    },
+    "meilisearch": {
+      "icon": "icons/meilisearch.svg",
+      "mode": "mono",
+      "bg": "#FF5CAA",
+      "fg": "#ffffff"
+    },
+    "mistral": {
+      "icon": "icons/mistralai.svg",
+      "mode": "mono",
+      "bg": "#FA520F",
+      "fg": "#ffffff"
+    },
+    "mix": {
+      "icon": "icons/elixir.svg",
+      "mode": "mono",
+      "bg": "#8847B9",
+      "fg": "#ffffff"
+    },
+    "mkdocs": {
+      "icon": "icons/materialformkdocs.svg",
+      "mode": "mono",
+      "bg": "#526CFE",
+      "fg": "#ffffff"
+    },
+    "mocha": {
+      "icon": "icons/mocha.svg",
+      "mode": "mono",
+      "bg": "#8D6748",
+      "fg": "#ffffff"
+    },
+    "mongo": {
+      "icon": "icons/mongodb.svg",
+      "mode": "mono",
+      "bg": "#47A248",
+      "fg": "#ffffff"
+    },
+    "mongosh": {
+      "icon": "icons/mongodb.svg",
+      "mode": "mono",
+      "bg": "#47A248",
+      "fg": "#ffffff"
+    },
+    "msfconsole": {
+      "icon": "icons/metasploit.svg",
+      "mode": "mono",
+      "bg": "#2596CD",
+      "fg": "#ffffff"
+    },
+    "msfvenom": {
+      "icon": "icons/metasploit.svg",
+      "mode": "mono",
+      "bg": "#2596CD",
+      "fg": "#ffffff"
+    },
+    "mvn": {
+      "icon": "icons/apachemaven.svg",
+      "mode": "mono",
+      "bg": "#C71A36",
+      "fg": "#ffffff"
+    },
+    "mysql": {
+      "icon": "icons/mysql.svg",
+      "mode": "mono",
+      "bg": "#4479A1",
+      "fg": "#ffffff"
+    },
+    "mysqldump": {
+      "icon": "icons/mysql.svg",
+      "mode": "mono",
+      "bg": "#4479A1",
+      "fg": "#ffffff"
+    },
+    "nats": {
+      "icon": "icons/natsdotio.svg",
+      "mode": "mono",
+      "bg": "#27AAE1",
+      "fg": "#14181f"
+    },
+    "neovim": {
+      "icon": "icons/neovim.svg",
+      "mode": "mono",
+      "bg": "#57A143",
+      "fg": "#ffffff"
+    },
+    "nerdctl": {
+      "icon": "icons/containerd.svg",
+      "mode": "mono",
+      "bg": "#575757",
+      "fg": "#ffffff",
+      "dark": {
+        "bg": "#eceff3",
+        "fg": "#575757"
+      }
+    },
+    "netlify": {
+      "icon": "icons/netlify.svg",
+      "mode": "mono",
+      "bg": "#000000",
+      "fg": "#ffffff",
+      "dark": {
+        "bg": "#eceff3",
+        "fg": "#000000"
+      }
+    },
+    "next": {
+      "icon": "icons/nextdotjs.svg",
+      "mode": "mono",
+      "bg": "#000000",
+      "fg": "#ffffff",
+      "dark": {
+        "bg": "#eceff3",
+        "fg": "#000000"
+      }
+    },
+    "ng": {
+      "icon": "icons/angular.svg",
+      "mode": "mono",
+      "bg": "#0F0F11",
+      "fg": "#ffffff",
+      "dark": {
+        "bg": "#eceff3",
+        "fg": "#0F0F11"
+      }
+    },
+    "nginx": {
+      "icon": "icons/nginx.svg",
+      "mode": "mono",
+      "bg": "#009639",
+      "fg": "#ffffff"
+    },
+    "nim": {
+      "icon": "icons/nim.svg",
+      "mode": "mono",
+      "bg": "#FFE953",
+      "fg": "#14181f"
+    },
+    "nix": {
+      "icon": "icons/nixos.svg",
+      "mode": "mono",
+      "bg": "#5277C3",
+      "fg": "#ffffff"
+    },
+    "nix-env": {
+      "icon": "icons/nixos.svg",
+      "mode": "mono",
+      "bg": "#5277C3",
+      "fg": "#ffffff"
+    },
+    "nix-shell": {
+      "icon": "icons/nixos.svg",
+      "mode": "mono",
+      "bg": "#5277C3",
+      "fg": "#ffffff"
+    },
+    "nixos-rebuild": {
+      "icon": "icons/nixos.svg",
+      "mode": "mono",
+      "bg": "#5277C3",
+      "fg": "#ffffff"
+    },
+    "node": {
+      "icon": "icons/nodedotjs.svg",
+      "mode": "mono",
+      "bg": "#5FA04E",
+      "fg": "#ffffff"
+    },
+    "nodejs": {
+      "icon": "icons/nodedotjs.svg",
+      "mode": "mono",
+      "bg": "#5FA04E",
+      "fg": "#ffffff"
+    },
+    "nomad": {
+      "icon": "icons/nomad.svg",
+      "mode": "mono",
+      "bg": "#00CA8E",
+      "fg": "#14181f"
+    },
+    "npm": {
+      "icon": "icons/npm.svg",
+      "mode": "mono",
+      "bg": "#CB3837",
+      "fg": "#ffffff"
+    },
+    "npx": {
+      "icon": "icons/npm.svg",
+      "mode": "mono",
+      "bg": "#CB3837",
+      "fg": "#ffffff"
+    },
+    "nu": {
+      "icon": "icons/nushell.svg",
+      "mode": "mono",
+      "bg": "#4E9A06",
+      "fg": "#ffffff"
+    },
+    "nuget": {
+      "icon": "icons/nuget.svg",
+      "mode": "mono",
+      "bg": "#004880",
+      "fg": "#ffffff"
+    },
+    "nushell": {
+      "icon": "icons/nushell.svg",
+      "mode": "mono",
+      "bg": "#4E9A06",
+      "fg": "#ffffff"
+    },
+    "nuxt": {
+      "icon": "icons/nuxt.svg",
+      "mode": "mono",
+      "bg": "#00DC82",
+      "fg": "#14181f"
+    },
+    "nvim": {
+      "icon": "icons/neovim.svg",
+      "mode": "mono",
+      "bg": "#57A143",
+      "fg": "#ffffff"
+    },
+    "nx": {
+      "icon": "icons/nx.svg",
+      "mode": "mono",
+      "bg": "#0C0C0D",
+      "fg": "#ffffff",
+      "dark": {
+        "bg": "#eceff3",
+        "fg": "#0C0C0D"
+      }
+    },
+    "ocaml": {
+      "icon": "icons/ocaml.svg",
+      "mode": "mono",
+      "bg": "#EC6813",
+      "fg": "#ffffff"
+    },
+    "ollama": {
+      "icon": "icons/ollama.svg",
+      "mode": "mono",
+      "bg": "#000000",
+      "fg": "#ffffff",
+      "dark": {
+        "bg": "#eceff3",
+        "fg": "#000000"
+      }
+    },
+    "openssl": {
+      "icon": "icons/openssl.svg",
+      "mode": "mono",
+      "bg": "#721412",
+      "fg": "#ffffff"
+    },
+    "openstack": {
+      "icon": "icons/openstack.svg",
+      "mode": "mono",
+      "bg": "#ED1944",
+      "fg": "#ffffff"
+    },
+    "opentofu": {
+      "icon": "icons/opentofu.svg",
+      "mode": "mono",
+      "bg": "#FFDA18",
+      "fg": "#14181f"
+    },
+    "openvpn": {
+      "icon": "icons/openvpn.svg",
+      "mode": "mono",
+      "bg": "#EA7E20",
+      "fg": "#14181f"
+    },
+    "otel-cli": {
+      "icon": "icons/opentelemetry.svg",
+      "mode": "mono",
+      "bg": "#000000",
+      "fg": "#ffffff",
+      "dark": {
+        "bg": "#eceff3",
+        "fg": "#000000"
+      }
+    },
+    "ovh": {
+      "icon": "icons/ovh.svg",
+      "mode": "mono",
+      "bg": "#123F6D",
+      "fg": "#ffffff"
+    },
+    "packer": {
+      "icon": "icons/packer.svg",
+      "mode": "mono",
+      "bg": "#02A8EF",
+      "fg": "#14181f"
+    },
+    "pacman": {
+      "icon": "icons/archlinux.svg",
+      "mode": "mono",
+      "bg": "#1793D1",
+      "fg": "#ffffff"
+    },
+    "pandoc": {
+      "icon": "icons/pandoc.svg",
+      "mode": "mono",
+      "bg": "#4093DA",
+      "fg": "#ffffff"
+    },
+    "perl": {
+      "icon": "icons/perl.svg",
+      "mode": "mono",
+      "bg": "#0073A1",
+      "fg": "#ffffff"
+    },
+    "pg_dump": {
+      "icon": "icons/postgresql.svg",
+      "mode": "mono",
+      "bg": "#4169E1",
+      "fg": "#ffffff"
+    },
+    "pip": {
+      "icon": "icons/python.svg",
+      "mode": "mono",
+      "bg": "#3776AB",
+      "fg": "#ffffff"
+    },
+    "pip3": {
+      "icon": "icons/python.svg",
+      "mode": "mono",
+      "bg": "#3776AB",
+      "fg": "#ffffff"
+    },
+    "pnpm": {
+      "icon": "icons/pnpm.svg",
+      "mode": "mono",
+      "bg": "#F69220",
+      "fg": "#14181f"
+    },
+    "podman": {
+      "icon": "icons/podman.svg",
+      "mode": "mono",
+      "bg": "#892CA0",
+      "fg": "#ffffff"
+    },
+    "poetry": {
+      "icon": "icons/poetry.svg",
+      "mode": "mono",
+      "bg": "#60A5FA",
+      "fg": "#14181f"
+    },
+    "postgres": {
+      "icon": "icons/postgresql.svg",
+      "mode": "mono",
+      "bg": "#4169E1",
+      "fg": "#ffffff"
+    },
+    "prettier": {
+      "icon": "icons/prettier.svg",
+      "mode": "mono",
+      "bg": "#F7B93E",
+      "fg": "#14181f"
+    },
+    "prometheus": {
+      "icon": "icons/prometheus.svg",
+      "mode": "mono",
+      "bg": "#E6522C",
+      "fg": "#ffffff"
+    },
+    "promtool": {
+      "icon": "icons/prometheus.svg",
+      "mode": "mono",
+      "bg": "#E6522C",
+      "fg": "#ffffff"
+    },
+    "psql": {
+      "icon": "icons/postgresql.svg",
+      "mode": "mono",
+      "bg": "#4169E1",
+      "fg": "#ffffff"
+    },
+    "pulsar": {
+      "icon": "icons/apachepulsar.svg",
+      "mode": "mono",
+      "bg": "#188FFF",
+      "fg": "#ffffff"
+    },
+    "pulumi": {
+      "icon": "icons/pulumi.svg",
+      "mode": "mono",
+      "bg": "#8A3391",
+      "fg": "#ffffff"
+    },
+    "puppet": {
+      "icon": "icons/puppet.svg",
+      "mode": "mono",
+      "bg": "#FFAE1A",
+      "fg": "#14181f"
+    },
+    "python": {
+      "icon": "icons/python.svg",
+      "mode": "mono",
+      "bg": "#3776AB",
+      "fg": "#ffffff"
+    },
+    "python3": {
+      "icon": "icons/python.svg",
+      "mode": "mono",
+      "bg": "#3776AB",
+      "fg": "#ffffff"
+    },
+    "qemu": {
+      "icon": "icons/qemu.svg",
+      "mode": "mono",
+      "bg": "#FF6600",
+      "fg": "#ffffff"
+    },
+    "qwen": {
+      "icon": "icons/qwen.svg",
+      "mode": "mono",
+      "bg": "#6950EF",
+      "fg": "#ffffff"
+    },
+    "r": {
+      "icon": "icons/r.svg",
+      "mode": "mono",
+      "bg": "#276DC3",
+      "fg": "#ffffff"
+    },
+    "rabbitmq": {
+      "icon": "icons/rabbitmq.svg",
+      "mode": "mono",
+      "bg": "#FF6600",
+      "fg": "#ffffff"
+    },
+    "rabbitmqctl": {
+      "icon": "icons/rabbitmq.svg",
+      "mode": "mono",
+      "bg": "#FF6600",
+      "fg": "#ffffff"
+    },
+    "railway": {
+      "icon": "icons/railway.svg",
+      "mode": "mono",
+      "bg": "#0B0D0E",
+      "fg": "#ffffff"
+    },
+    "rclone": {
+      "icon": "icons/rclone.svg",
+      "mode": "mono",
+      "bg": "#3F79AD",
+      "fg": "#ffffff"
+    },
+    "redis-cli": {
+      "icon": "icons/redis.svg",
+      "mode": "mono",
+      "bg": "#FF4438",
+      "fg": "#ffffff"
+    },
+    "redis-server": {
+      "icon": "icons/redis.svg",
+      "mode": "mono",
+      "bg": "#FF4438",
+      "fg": "#ffffff"
+    },
+    "render": {
+      "icon": "icons/render.svg",
+      "mode": "mono",
+      "bg": "#000000",
+      "fg": "#ffffff",
+      "dark": {
+        "bg": "#eceff3",
+        "fg": "#000000"
+      }
+    },
+    "renovate": {
+      "icon": "icons/renovate.svg",
+      "mode": "mono",
+      "bg": "#308BE3",
+      "fg": "#ffffff"
+    },
+    "rollup": {
+      "icon": "icons/rollupdotjs.svg",
+      "mode": "mono",
+      "bg": "#EC4A3F",
+      "fg": "#ffffff"
+    },
+    "rpm": {
+      "icon": "icons/fedora.svg",
+      "mode": "mono",
+      "bg": "#51A2DA",
+      "fg": "#14181f"
+    },
+    "rscript": {
+      "icon": "icons/r.svg",
+      "mode": "mono",
+      "bg": "#276DC3",
+      "fg": "#ffffff"
+    },
+    "ruff": {
+      "icon": "icons/ruff.svg",
+      "mode": "mono",
+      "bg": "#D7FF64",
+      "fg": "#14181f"
+    },
+    "rustc": {
+      "icon": "icons/rust.svg",
+      "mode": "mono",
+      "bg": "#000000",
+      "fg": "#ffffff",
+      "dark": {
+        "bg": "#eceff3",
+        "fg": "#000000"
+      }
+    },
+    "rustup": {
+      "icon": "icons/rust.svg",
+      "mode": "mono",
+      "bg": "#000000",
+      "fg": "#ffffff",
+      "dark": {
+        "bg": "#eceff3",
+        "fg": "#000000"
+      }
+    },
+    "salt": {
+      "icon": "icons/saltproject.svg",
+      "mode": "mono",
+      "bg": "#57BCAD",
+      "fg": "#14181f"
+    },
+    "sass": {
+      "icon": "icons/sass.svg",
+      "mode": "mono",
+      "bg": "#CC6699",
+      "fg": "#ffffff"
+    },
+    "sbt": {
+      "icon": "icons/scala.svg",
+      "mode": "mono",
+      "bg": "#DC322F",
+      "fg": "#ffffff"
+    },
+    "scala": {
+      "icon": "icons/scala.svg",
+      "mode": "mono",
+      "bg": "#DC322F",
+      "fg": "#ffffff"
+    },
+    "scw": {
+      "icon": "icons/scaleway.svg",
+      "mode": "mono",
+      "bg": "#4F0599",
+      "fg": "#ffffff"
+    },
+    "sentry-cli": {
+      "icon": "icons/sentry.svg",
+      "mode": "mono",
+      "bg": "#362D59",
+      "fg": "#ffffff"
+    },
+    "sh": {
+      "icon": "icons/gnubash.svg",
+      "mode": "mono",
+      "bg": "#4EAA25",
+      "fg": "#ffffff"
+    },
+    "shopify": {
+      "icon": "icons/shopify.svg",
+      "mode": "mono",
+      "bg": "#7AB55C",
+      "fg": "#14181f"
+    },
+    "simctl": {
+      "icon": "icons/xcode.svg",
+      "mode": "mono",
+      "bg": "#147EFB",
+      "fg": "#ffffff"
+    },
+    "snap": {
+      "icon": "icons/snapcraft.svg",
+      "mode": "mono",
+      "bg": "#E95420",
+      "fg": "#ffffff"
+    },
+    "snyk": {
+      "icon": "icons/snyk.svg",
+      "mode": "mono",
+      "bg": "#4C4A73",
+      "fg": "#ffffff"
+    },
+    "solr": {
+      "icon": "icons/apachesolr.svg",
+      "mode": "mono",
+      "bg": "#D9411E",
+      "fg": "#ffffff"
+    },
+    "sonar-scanner": {
+      "icon": "icons/sonarqubeserver.svg",
+      "mode": "mono",
+      "bg": "#126ED3",
+      "fg": "#ffffff"
+    },
+    "speedtest": {
+      "icon": "icons/speedtest.svg",
+      "mode": "mono",
+      "bg": "#141526",
+      "fg": "#ffffff"
+    },
+    "sqlite": {
+      "icon": "icons/sqlite.svg",
+      "mode": "mono",
+      "bg": "#003B57",
+      "fg": "#ffffff"
+    },
+    "sqlite3": {
+      "icon": "icons/sqlite.svg",
+      "mode": "mono",
+      "bg": "#003B57",
+      "fg": "#ffffff"
+    },
+    "stack": {
+      "icon": "icons/haskell.svg",
+      "mode": "mono",
+      "bg": "#5D4F85",
+      "fg": "#ffffff"
+    },
+    "starship": {
+      "icon": "icons/starship.svg",
+      "mode": "mono",
+      "bg": "#DD0B78",
+      "fg": "#ffffff"
+    },
+    "storybook": {
+      "icon": "icons/storybook.svg",
+      "mode": "mono",
+      "bg": "#FF4785",
+      "fg": "#ffffff"
+    },
+    "stripe": {
+      "icon": "icons/stripe.svg",
+      "mode": "mono",
+      "bg": "#635BFF",
+      "fg": "#ffffff"
+    },
+    "subl": {
+      "icon": "icons/sublimetext.svg",
+      "mode": "mono",
+      "bg": "#FF9800",
+      "fg": "#14181f"
+    },
+    "supabase": {
+      "icon": "icons/supabase.svg",
+      "mode": "mono",
+      "bg": "#3FCF8E",
+      "fg": "#14181f"
+    },
+    "svelte": {
+      "icon": "icons/svelte.svg",
+      "mode": "mono",
+      "bg": "#FF3E00",
+      "fg": "#ffffff"
+    },
+    "svn": {
+      "icon": "icons/subversion.svg",
+      "mode": "mono",
+      "bg": "#809CC9",
+      "fg": "#14181f"
+    },
+    "swc": {
+      "icon": "icons/swc.svg",
+      "mode": "mono",
+      "bg": "#F8C457",
+      "fg": "#14181f"
+    },
+    "swift": {
+      "icon": "icons/swift.svg",
+      "mode": "mono",
+      "bg": "#F05138",
+      "fg": "#ffffff"
+    },
+    "swiftc": {
+      "icon": "icons/swift.svg",
+      "mode": "mono",
+      "bg": "#F05138",
+      "fg": "#ffffff"
+    },
+    "tailscale": {
+      "icon": "icons/tailscale.svg",
+      "mode": "mono",
+      "bg": "#242424",
+      "fg": "#ffffff",
+      "dark": {
+        "bg": "#eceff3",
+        "fg": "#242424"
+      }
+    },
+    "tailscaled": {
+      "icon": "icons/tailscale.svg",
+      "mode": "mono",
+      "bg": "#242424",
+      "fg": "#ffffff",
+      "dark": {
+        "bg": "#eceff3",
+        "fg": "#242424"
+      }
+    },
+    "tailwind": {
+      "icon": "icons/tailwindcss.svg",
+      "mode": "mono",
+      "bg": "#06B6D4",
+      "fg": "#14181f"
+    },
+    "tailwindcss": {
+      "icon": "icons/tailwindcss.svg",
+      "mode": "mono",
+      "bg": "#06B6D4",
+      "fg": "#14181f"
+    },
+    "tauri": {
+      "icon": "icons/tauri.svg",
+      "mode": "color",
+      "bg": "#ffffff",
+      "fg": "#1f2430"
+    },
+    "tea": {
+      "icon": "icons/gitea.svg",
+      "mode": "mono",
+      "bg": "#609926",
+      "fg": "#ffffff"
+    },
+    "terraform": {
+      "icon": "icons/terraform.svg",
+      "mode": "mono",
+      "bg": "#844FBA",
+      "fg": "#ffffff"
+    },
+    "terragrunt": {
+      "icon": "icons/terraform.svg",
+      "mode": "mono",
+      "bg": "#844FBA",
+      "fg": "#ffffff"
+    },
+    "tf": {
+      "icon": "icons/terraform.svg",
+      "mode": "mono",
+      "bg": "#844FBA",
+      "fg": "#ffffff"
+    },
+    "tkn": {
+      "icon": "icons/tekton.svg",
+      "mode": "mono",
+      "bg": "#FD495C",
+      "fg": "#ffffff"
+    },
+    "tmux": {
+      "icon": "icons/tmux.svg",
+      "mode": "mono",
+      "bg": "#1BB91F",
+      "fg": "#14181f"
+    },
+    "tofu": {
+      "icon": "icons/opentofu.svg",
+      "mode": "mono",
+      "bg": "#FFDA18",
+      "fg": "#14181f"
+    },
+    "tor": {
+      "icon": "icons/torproject.svg",
+      "mode": "mono",
+      "bg": "#7D4698",
+      "fg": "#ffffff"
+    },
+    "traefik": {
+      "icon": "icons/traefikproxy.svg",
+      "mode": "mono",
+      "bg": "#24A1C1",
+      "fg": "#ffffff"
+    },
+    "travis": {
+      "icon": "icons/travisci.svg",
+      "mode": "mono",
+      "bg": "#3EAAAF",
+      "fg": "#14181f"
+    },
+    "trivy": {
+      "icon": "icons/trivy.svg",
+      "mode": "mono",
+      "bg": "#1904DA",
+      "fg": "#ffffff"
+    },
+    "ts-node": {
+      "icon": "icons/typescript.svg",
+      "mode": "mono",
+      "bg": "#3178C6",
+      "fg": "#ffffff"
+    },
+    "tsc": {
+      "icon": "icons/typescript.svg",
+      "mode": "mono",
+      "bg": "#3178C6",
+      "fg": "#ffffff"
+    },
+    "tshark": {
+      "icon": "icons/wireshark.svg",
+      "mode": "mono",
+      "bg": "#1679A7",
+      "fg": "#ffffff"
+    },
+    "tsx": {
+      "icon": "icons/typescript.svg",
+      "mode": "mono",
+      "bg": "#3178C6",
+      "fg": "#ffffff"
+    },
+    "turbo": {
+      "icon": "icons/turborepo.svg",
+      "mode": "mono",
+      "bg": "#FF1E56",
+      "fg": "#ffffff"
+    },
+    "upctl": {
+      "icon": "icons/upcloud.svg",
+      "mode": "mono",
+      "bg": "#7B00FF",
+      "fg": "#ffffff"
+    },
+    "uv": {
+      "icon": "icons/uv.svg",
+      "mode": "mono",
+      "bg": "#DE5FE9",
+      "fg": "#ffffff"
+    },
+    "vagrant": {
+      "icon": "icons/vagrant.svg",
+      "mode": "mono",
+      "bg": "#1868F2",
+      "fg": "#ffffff"
+    },
+    "vault": {
+      "icon": "icons/vault.svg",
+      "mode": "mono",
+      "bg": "#FFEC6E",
+      "fg": "#14181f"
+    },
+    "vboxmanage": {
+      "icon": "icons/virtualbox.svg",
+      "mode": "mono",
+      "bg": "#2F61B4",
+      "fg": "#ffffff"
+    },
+    "vc": {
+      "icon": "icons/vercel.svg",
+      "mode": "mono",
+      "bg": "#000000",
+      "fg": "#ffffff",
+      "dark": {
+        "bg": "#eceff3",
+        "fg": "#000000"
+      }
+    },
+    "vercel": {
+      "icon": "icons/vercel.svg",
+      "mode": "mono",
+      "bg": "#000000",
+      "fg": "#ffffff",
+      "dark": {
+        "bg": "#eceff3",
+        "fg": "#000000"
+      }
+    },
+    "vim": {
+      "icon": "icons/vim.svg",
+      "mode": "mono",
+      "bg": "#019733",
+      "fg": "#ffffff"
+    },
+    "vite": {
+      "icon": "icons/vite.svg",
+      "mode": "mono",
+      "bg": "#9135FF",
+      "fg": "#ffffff"
+    },
+    "vitest": {
+      "icon": "icons/vitest.svg",
+      "mode": "mono",
+      "bg": "#00FF74",
+      "fg": "#14181f"
+    },
+    "vmrun": {
+      "icon": "icons/vmware.svg",
+      "mode": "mono",
+      "bg": "#607078",
+      "fg": "#ffffff"
+    },
+    "vscodium": {
+      "icon": "icons/vscodium.svg",
+      "mode": "mono",
+      "bg": "#2F80ED",
+      "fg": "#ffffff"
+    },
+    "vue": {
+      "icon": "icons/vuedotjs.svg",
+      "mode": "mono",
+      "bg": "#4FC08D",
+      "fg": "#14181f"
+    },
+    "vultr": {
+      "icon": "icons/vultr.svg",
+      "mode": "mono",
+      "bg": "#007BFC",
+      "fg": "#ffffff"
+    },
+    "vultr-cli": {
+      "icon": "icons/vultr.svg",
+      "mode": "mono",
+      "bg": "#007BFC",
+      "fg": "#ffffff"
+    },
+    "wasmtime": {
+      "icon": "icons/webassembly.svg",
+      "mode": "mono",
+      "bg": "#654FF0",
+      "fg": "#ffffff"
+    },
+    "webpack": {
+      "icon": "icons/webpack.svg",
+      "mode": "mono",
+      "bg": "#8DD6F9",
+      "fg": "#14181f"
+    },
+    "wg": {
+      "icon": "icons/wireguard.svg",
+      "mode": "mono",
+      "bg": "#88171A",
+      "fg": "#ffffff"
+    },
+    "wg-quick": {
+      "icon": "icons/wireguard.svg",
+      "mode": "mono",
+      "bg": "#88171A",
+      "fg": "#ffffff"
+    },
+    "windsurf": {
+      "icon": "icons/windsurf.svg",
+      "mode": "mono",
+      "bg": "#0B100F",
+      "fg": "#ffffff"
+    },
+    "wireshark": {
+      "icon": "icons/wireshark.svg",
+      "mode": "mono",
+      "bg": "#1679A7",
+      "fg": "#ffffff"
+    },
+    "wrangler": {
+      "icon": "icons/cloudflare.svg",
+      "mode": "mono",
+      "bg": "#F38020",
+      "fg": "#14181f"
+    },
+    "xcodebuild": {
+      "icon": "icons/xcode.svg",
+      "mode": "mono",
+      "bg": "#147EFB",
+      "fg": "#ffffff"
+    },
+    "xcrun": {
+      "icon": "icons/xcode.svg",
+      "mode": "mono",
+      "bg": "#147EFB",
+      "fg": "#ffffff"
+    },
+    "yarn": {
+      "icon": "icons/yarn.svg",
+      "mode": "mono",
+      "bg": "#2C8EBB",
+      "fg": "#ffffff"
+    },
+    "youtube-dl": {
+      "icon": "icons/youtube.svg",
+      "mode": "mono",
+      "bg": "#FF0000",
+      "fg": "#ffffff"
+    },
+    "yt-dlp": {
+      "icon": "icons/youtube.svg",
+      "mode": "mono",
+      "bg": "#FF0000",
+      "fg": "#ffffff"
+    },
+    "yum": {
+      "icon": "icons/fedora.svg",
+      "mode": "mono",
+      "bg": "#51A2DA",
+      "fg": "#14181f"
+    },
+    "zaproxy": {
+      "icon": "icons/zap.svg",
+      "mode": "mono",
+      "bg": "#00549E",
+      "fg": "#ffffff"
+    },
+    "zed": {
+      "icon": "icons/zedindustries.svg",
+      "mode": "mono",
+      "bg": "#084CCF",
+      "fg": "#ffffff"
+    },
+    "zerotier-cli": {
+      "icon": "icons/zerotier.svg",
+      "mode": "mono",
+      "bg": "#FFB441",
+      "fg": "#14181f"
+    },
+    "zig": {
+      "icon": "icons/zig.svg",
+      "mode": "mono",
+      "bg": "#F7A41D",
+      "fg": "#14181f"
+    },
+    "zsh": {
+      "icon": "icons/zsh.svg",
+      "mode": "mono",
+      "bg": "#F15A24",
+      "fg": "#ffffff"
+    },
+    "zypper": {
+      "icon": "icons/opensuse.svg",
+      "mode": "mono",
+      "bg": "#73BA25",
+      "fg": "#14181f"
+    }
+  }
+}

@@ -1,0 +1,65 @@
+Icon licenses
+=============
+
+Icons in this directory come from the Simple Icons project
+(https://simpleicons.org), which releases its set under CC0 1.0
+except where an icon declares its own license. Every shipped icon's
+upstream license metadata was audited; the table below is the
+required attribution for the icons that are not CC0.
+
+Unless noted, SVGs were modified to inherit `fill="currentColor"` so
+GoRex can tint them; modified copies of share-alike or copyleft icons
+stay under the same license, and each file carries an
+SPDX-License-Identifier comment. `unmodified` files ship verbatim
+because their license forbids derivatives.
+
+Icons remain trademarks of their respective owners and are used only
+to identify the programs they depict. Licenses marked `custom` point
+at vendor brand guidelines; this use is nominative (naming the
+program the icon depicts), which those policies allow.
+
+| icon | brand | license | source | change |
+|---|---|---|---|---|
+| apache | Apache | Apache-2.0 | https://www.apache.org/foundation/marks | currentColor |
+| apachecassandra | Apache Cassandra | Apache-2.0 | https://www.apache.org/foundation/marks | currentColor |
+| apachegroovy | Apache Groovy | Apache-2.0 | https://www.apache.org/foundation/marks | currentColor |
+| apachekafka | Apache Kafka | Apache-2.0 | https://www.apache.org/foundation/marks | currentColor |
+| apachemaven | Apache Maven | Apache-2.0 | https://www.apache.org/foundation/marks | currentColor |
+| apachepulsar | Apache Pulsar | Apache-2.0 | https://www.apache.org/foundation/marks | currentColor |
+| apachesolr | Apache Solr | Apache-2.0 | https://www.apache.org/foundation/marks | currentColor |
+| saltproject | Salt Project | Apache-2.0 | https://gitlab.com/saltstack/open/salt-branding-guide/-/blob/37bbc3a8577be2f44895310c092439472491a8f4/README.md | currentColor |
+| openjdk | OpenJDK | BSD-3-Clause | https://hg.openjdk.java.net/duke/duke/file/ca00f100dafc/vector/Agent.svg | currentColor |
+| android | Android | CC-BY-3.0 | https://developer.android.com/distribute/marketing-tools/brand-guidelines#brand-android | currentColor |
+| flatpak | Flatpak | CC-BY-3.0 | https://flatpak.org/press | currentColor |
+| git | Git | CC-BY-3.0 | https://git-scm.com/community/logos | currentColor |
+| angular | Angular | CC-BY-4.0 | https://angular.dev/press-kit | currentColor |
+| jekyll | Jekyll | CC-BY-4.0 | https://github.com/jekyll/brand | currentColor |
+| nixos | NixOS | CC-BY-4.0 | https://brand.nixos.org/documents/nixos-branding-guide.pdf | currentColor |
+| opentelemetry | OpenTelemetry | CC-BY-4.0 | https://cncf-branding.netlify.app/projects/opentelemetry/ | currentColor |
+| yarn | Yarn | CC-BY-4.0 | https://github.com/yarnpkg/assets/tree/76d30ca2aebed5b73ea8131d972218fb860bd32d | currentColor |
+| tauri | Tauri | CC-BY-NC-ND-4.0 | https://github.com/tauri-apps/tauri-docs/blob/b1cdfa9d7c6d0b17dae60a90266ddced40a7b384/static/img/Brand_Guidelines.pdf | unmodified |
+| sass | Sass | CC-BY-NC-SA-3.0 | https://sass-lang.com/styleguide/brand | currentColor |
+| vuedotjs | Vue.js | CC-BY-NC-SA-4.0 | https://github.com/vuejs/art/blob/a1c78b74569b70a25300925b4eacfefcc143b8f6/README.md | currentColor |
+| gentoo | Gentoo | CC-BY-SA-2.5 | https://www.gentoo.org/inside-gentoo/foundation/name-logo-guidelines.html | currentColor |
+| debian | Debian | CC-BY-SA-3.0 | https://www.debian.org/logos/ | currentColor |
+| jenkins | Jenkins | CC-BY-SA-3.0 | https://www.jenkins.io/press/ | currentColor |
+| neovim | Neovim | CC-BY-SA-3.0 | https://neovim.io | currentColor |
+| snapcraft | Snapcraft | CC-BY-SA-3.0 | https://design.ubuntu.com/resources | currentColor |
+| pandoc | Pandoc | CC-BY-SA-4.0 | https://github.com/tarleb/pandoc-logo/blob/1c547bbfaefa7e842c67e617775a44bc2342db8e/pandoc.svg | currentColor |
+| r | R | CC-BY-SA-4.0 | https://www.r-project.org/logo/ | currentColor |
+| rust | Rust | CC-BY-SA-4.0 | https://www.rust-lang.org/policies/media-guide | currentColor |
+| zig | Zig | CC-BY-SA-4.0 | https://github.com/ziglang/logo/blob/6446ba8e37a0651da720d8869e1ce9264fa0c0b9/zig-mark.svg | currentColor |
+| fishshell | fish shell | GPL-2.0-only | https://github.com/fish-shell/fish-site/blob/1364b2e794c9aba7492c8962bae0f7fbe4886317/artwork/ascii%20fish.eps | currentColor |
+| gnuemacs | GNU Emacs | GPL-2.0-or-later | https://git.savannah.gnu.org/cgit/emacs.git/tree/etc/images/icons/hicolor/scalable/apps/emacs.svg | currentColor |
+| mercurial | Mercurial | GPL-2.0-or-later | https://www.mercurial-scm.org/hg-logo/ | currentColor |
+| deno | Deno | MIT | https://deno.com/brand | currentColor |
+| gnubash | GNU Bash | MIT | https://github.com/odb/official-bash-logo | currentColor |
+| githubcopilot | GitHub Copilot | MIT | https://primer.style/foundations/icons/copilot-24 | currentColor |
+| storybook | Storybook | MIT | https://github.com/storybookjs/brand/tree/6f4d67f65f8275c53c310a73a8da6c6e96c8488c | currentColor |
+| ocaml | OCaml | Unlicense | https://ocaml.org/logo | currentColor |
+| fedora | Fedora | custom | https://fedoraproject.org/wiki/Legal:Trademark_guidelines | currentColor |
+| flux | Flux | custom | https://www.cncf.io/brand-guidelines/ | currentColor |
+| webpack | Webpack | custom | https://webpack.js.org/branding | currentColor |
+
+All other icons in this pack are CC0 1.0 via the Simple Icons
+project license.
