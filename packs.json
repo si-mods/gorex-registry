@@ -10,6 +10,26 @@
       "repo": "https://github.com/si-mods/gorex-registry.git",
       "subdir": "packs/starter-dev-tools",
       "entries": 5
+    },
+    {
+      "id": "simple-icons",
+      "name": "Simple Icons",
+      "description": "314 developer tools and CLIs from simpleicons.org: shells, editors, clouds, k8s, languages, databases, AI agents. Monochrome brand tiles.",
+      "author": "si-mods",
+      "version": "1.0.0",
+      "repo": "https://github.com/si-mods/gorex-registry.git",
+      "subdir": "packs/simple-icons",
+      "entries": 314
+    },
+    {
+      "id": "lobe-icons",
+      "name": "Lobe Icons",
+      "description": "110 AI CLIs, model providers and cloud tools from lobehub/lobe-icons: Claude Code, Codex, Gemini, AWS, Azure, MCP and more. Full-color icons on white tiles.",
+      "author": "si-mods",
+      "version": "1.0.0",
+      "repo": "https://github.com/si-mods/gorex-registry.git",
+      "subdir": "packs/lobe-icons",
+      "entries": 110
     }
   ]
 }
