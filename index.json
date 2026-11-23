@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "updated_at": "2026-11-23T08:00:00Z",
+  "packs": [
+    {
+      "id": "starter-dev-tools",
+      "name": "Starter Dev Tools",
+      "description": "Essential icons for cloud, container, and Python CLI tools (terraform, kubectl, k9s, uv, ruff).",
+      "author": "si-mods",
+      "version": "0.1.0",
+      "repo": "https://github.com/si-mods/gorex-registry.git",
+      "subdir": "packs/starter-dev-tools",
+      "entries": 5
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+name: Build Registry Index
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate packs.json and index.json
+        run: |
+          python3 - <<'PY'
+          import json, pathlib
+          packs = json.loads(pathlib.Path("packs.json").read_text())
+          index = json.loads(pathlib.Path("index.json").read_text())
+          assert packs["schema"] == 1 and index["schema"] == 1
+          for p in packs["packs"]:
+              assert p["id"], "missing id"
+              if "subdir" in p:
+                  m = pathlib.Path(p["subdir"]) / "pack.json"
+                  assert m.exists(), f"missing {m}"
+                  data = json.loads(m.read_text())
+                  assert data["schema"] == 1
+                  for k, v in data["programs"].items():
+                      icon = pathlib.Path(p["subdir"]) / v["icon"]
+                      assert icon.exists() and icon.stat().st_size <= 32768
+          print("Validated", len(packs["packs"]), "pack(s)")
+          PY

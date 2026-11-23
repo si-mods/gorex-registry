@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "id": "starter-dev-tools",
+  "name": "Starter Dev Tools",
+  "version": "0.1.0",
+  "author": "si-mods",
+  "programs": {
+    "terraform": { "icon": "icons/terraform.svg", "mode": "mono", "bg": "#7b42bc", "fg": "#ffffff" },
+    "kubectl": { "icon": "icons/kubernetes.svg", "mode": "mono", "bg": "#326ce5", "fg": "#ffffff" },
+    "k9s": { "icon": "icons/kubernetes.svg", "mode": "mono", "bg": "#326ce5", "fg": "#ffffff" },
+    "uv": { "icon": "icons/uv.svg", "mode": "mono", "bg": "#de5fe9", "fg": "#ffffff" },
+    "ruff": { "icon": "icons/ruff.svg", "mode": "mono", "bg": "#d7ff64", "fg": "#261230" }
+  }
+}
