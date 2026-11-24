@@ -1,0 +1,40 @@
+{
+  "name": "Moss",
+  "seeds": {
+    "light": {
+      "bgTop": "#e8eee9",
+      "bgMid": "#e1e9e3",
+      "bgLow": "#dce5df",
+      "bgBottom": "#d5dfd8",
+      "bgTint": "#bcd3c659",
+      "accent": "#1f7a68",
+      "accentHover": "#1a6e5d",
+      "accentPressed": "#155f50",
+      "panel": "#f9fbf9",
+      "field": "#f0f4f1",
+      "fieldBorder": "#d3ddd6",
+      "surface": "#f9fbf9",
+      "surfaceHover": "#ebf1ed",
+      "surfacePressed": "#dfe8e2"
+    },
+    "dark": {
+      "bgTop": "#1b221f",
+      "bgMid": "#181e1b",
+      "bgLow": "#161b18",
+      "bgBottom": "#191f1c",
+      "bgTint": "#3a5a4c40",
+      "accent": "#5cc4a6",
+      "accentHover": "#75d0b6",
+      "accentPressed": "#49b296",
+      "panel": "#212825",
+      "field": "#283029",
+      "fieldBorder": "#38443e",
+      "surface": "#222926",
+      "surfaceHover": "#2c3530",
+      "surfacePressed": "#364039"
+    }
+  },
+  "roles": {
+    "sideBar.tabActiveBackground": { "light": "#ffffffee", "dark": "#2c3a34" }
+  }
+}

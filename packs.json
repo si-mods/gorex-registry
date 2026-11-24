@@ -42,6 +42,16 @@
       "version": "0.1.0",
       "repo": "https://github.com/si-mods/gorex-registry.git",
       "subdir": "themes/slate"
+    },
+    {
+      "id": "moss",
+      "kind": "theme",
+      "name": "Moss",
+      "description": "Sage and green-gray chrome, light and dark, with a teal-green accent.",
+      "author": "si-mods",
+      "version": "0.1.0",
+      "repo": "https://github.com/si-mods/gorex-registry.git",
+      "subdir": "themes/moss"
     }
   ]
 }
