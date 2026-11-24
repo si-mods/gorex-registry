@@ -8,6 +8,7 @@ the review saw. A check reads the headers of the images; it decodes no
 pixels.
 """
 
+import os
 import pathlib
 import re
 import struct
@@ -123,6 +124,12 @@ def keys(o, where, known):
 def check(data, root, where):
     """Checks the DSK-010 keys of the manifest data of the pack at root."""
     root = pathlib.Path(root)
+    # No link anywhere in the pack: not the assets folder, the NOTICE or a
+    # license file, nor any other file. A link could point out of the pack.
+    for top, dirs, files in os.walk(root, followlinks=False):
+        dirs[:] = [d for d in dirs if d != ".git" or pathlib.Path(top) != root]
+        for name in dirs + files:
+            assert not os.path.islink(os.path.join(top, name)), f"{where}: {os.path.relpath(os.path.join(top, name), root)} is a link"
     assets = data.get("assets", {})
     keys(assets, f"{where}: assets", set(assets))
     assert len(assets) <= 16, f"{where}: more than 16 assets"

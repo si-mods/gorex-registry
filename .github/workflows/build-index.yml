@@ -33,6 +33,8 @@ jobs:
         # A theme pack in a repo of its own (docs/DSK-010-theme-ambience.md)
         # is listed with no subdir and the full commit SHA to install. GoRex
         # installs that commit, so CI checks the files of that commit.
+        env:
+          GIT_LFS_SKIP_SMUDGE: "1"
         run: |
           python3 - <<'PY'
           import json, pathlib, re, subprocess
@@ -41,7 +43,8 @@ jobs:
           for t in json.loads(pathlib.Path("index.json").read_text()).get("themes", []):
               if t.get("repo") == REGISTRY:
                   continue
-              where = t["id"]
+              where = t.get("id")
+              assert isinstance(where, str) and re.fullmatch(r"[A-Za-z0-9._-]+", where) and where not in (".", ".."), f"bad id {where!r}"
               assert "subdir" not in t, f"{where}: a pack of another repo has no subdir"
               assert re.fullmatch(r"https://[A-Za-z0-9./_-]+\.git", t.get("repo", "")), f"{where}: repo must be an https clone URL"
               assert re.fullmatch(r"[0-9a-f]{40}", t.get("ref", "")), f"{where}: ref must be a full commit SHA, not a branch or a tag"
