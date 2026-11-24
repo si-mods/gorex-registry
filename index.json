@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated_at": "2026-11-24T10:00:00Z",
+  "updated_at": "2026-11-24T12:00:00Z",
   "packs": [
     {
       "id": "starter-dev-tools",
@@ -43,6 +43,26 @@
       "version": "0.1.0",
       "repo": "https://github.com/si-mods/gorex-registry.git",
       "subdir": "themes/slate"
+    },
+    {
+      "id": "ayu",
+      "kind": "theme",
+      "name": "Ayu",
+      "description": "ayu Light and ayu Dark from ayu-colors 9.1.0: the window, sidebar and accent, with Ghostty's Ayu Light and Ayu terminal themes. MIT, see NOTICE.",
+      "author": "si-mods",
+      "version": "0.1.0",
+      "repo": "https://github.com/si-mods/gorex-registry.git",
+      "subdir": "themes/ayu"
+    },
+    {
+      "id": "ayu-mirage",
+      "kind": "theme",
+      "name": "Ayu Mirage",
+      "description": "ayu Light and ayu Mirage from ayu-colors 9.1.0: the window, sidebar and accent, with Ghostty's Ayu Light and Ayu Mirage terminal themes. MIT, see NOTICE.",
+      "author": "si-mods",
+      "version": "0.1.0",
+      "repo": "https://github.com/si-mods/gorex-registry.git",
+      "subdir": "themes/ayu-mirage"
     }
   ]
 }
