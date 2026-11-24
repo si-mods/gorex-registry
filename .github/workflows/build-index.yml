@@ -29,10 +29,44 @@ jobs:
                       assert icon.exists() and icon.stat().st_size <= 32768
           print("Validated", len(packs["packs"]), "pack(s)")
           PY
+      - name: Clone the theme packs of other repos at their ref
+        # A theme pack in a repo of its own (docs/DSK-010-theme-ambience.md)
+        # is listed with no subdir and the full commit SHA to install. GoRex
+        # installs that commit, so CI checks the files of that commit.
+        env:
+          GIT_LFS_SKIP_SMUDGE: "1"
+        run: |
+          python3 - <<'PY'
+          import json, pathlib, re, subprocess
+          REGISTRY = "https://github.com/si-mods/gorex-registry.git"
+          packs = {t["id"]: t for t in json.loads(pathlib.Path("packs.json").read_text()).get("themes", [])}
+          for t in json.loads(pathlib.Path("index.json").read_text()).get("themes", []):
+              if t.get("repo") == REGISTRY:
+                  continue
+              where = t.get("id")
+              assert isinstance(where, str) and re.fullmatch(r"[A-Za-z0-9._-]+", where) and where not in (".", ".."), f"bad id {where!r}"
+              assert "subdir" not in t, f"{where}: a pack of another repo has no subdir"
+              assert re.fullmatch(r"https://[A-Za-z0-9./_-]+\.git", t.get("repo", "")), f"{where}: repo must be an https clone URL"
+              assert re.fullmatch(r"[0-9a-f]{40}", t.get("ref", "")), f"{where}: ref must be a full commit SHA, not a branch or a tag"
+              p = packs.get(where, {})
+              assert p.get("ref") == t["ref"] and p.get("repo") == t["repo"], f"{where}: packs.json and index.json differ"
+              d = pathlib.Path(".external") / where
+              d.mkdir(parents=True)
+              def git(*args):
+                  return subprocess.run(["git", "-C", str(d), *args], check=True, capture_output=True, text=True).stdout.strip()
+              git("init", "-q")
+              git("remote", "add", "origin", t["repo"])
+              git("fetch", "-q", "--depth", "1", "origin", t["ref"])
+              git("checkout", "-q", "--detach", "FETCH_HEAD")
+              assert git("rev-parse", "HEAD") == t["ref"], f"{where}: the clone is not at ref"
+              print("Cloned", where, "at", t["ref"])
+          PY
       - name: Validate theme packs
         run: |
           python3 - <<'PY'
-          import json, pathlib, re
+          import json, pathlib, re, sys
+          sys.path.insert(0, "scripts")
+          import theme_assets
           # The seed and role names of GoRex's internal/theme
           # (docs/DSK-008-theme.md). GoRex drops any other name at load.
           SEEDS = {
@@ -65,10 +99,11 @@ jobs:
           for t in packs.get("themes", []):
               assert re.fullmatch(r"[A-Za-z0-9._-]+", t["id"]) and t["id"] not in (".", ".."), f"bad id {t['id']!r}"
               assert t.get("kind") == "theme", f"{t['id']}: kind must be theme"
-              m = pathlib.Path(t["subdir"]) / "theme.json"
-              assert m.exists() and m.stat().st_size <= 65536, f"missing or large {m}"
-              data = json.loads(m.read_text())
-              keys = {"name", "seeds", "roles", "terminal"}
+              root = pathlib.Path(t["subdir"]) if "subdir" in t else pathlib.Path(".external") / t["id"]
+              m = root / "theme.json"
+              assert m.exists() and not m.is_symlink() and m.stat().st_size <= 65536, f"missing or large {m}"
+              data = json.loads(m.read_text(encoding="utf-8"))
+              keys = {"name", "seeds", "roles", "terminal", "assets", "ambience", "mascot", "brand", "ticker"}
               assert set(data) <= keys, f"{m}: unknown keys {set(data) - keys}"
               for app, seeds in data.get("seeds", {}).items():
                   assert app in ("light", "dark"), f"{m}: unknown appearance {app}"
@@ -87,5 +122,7 @@ jobs:
               for app, name in term.items():
                   assert app in ("light", "dark"), f"{m}: terminal: unknown appearance {app}"
                   assert isinstance(name, str) and TERM.fullmatch(name) and name not in (".", ".."), f"{m}: terminal.{app}: bad theme name {name!r}"
+              # The images and the ambience of docs/DSK-010-theme-ambience.md.
+              theme_assets.check(data, root, str(m))
           print("Validated", len(ids), "theme(s)")
           PY
