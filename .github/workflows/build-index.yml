@@ -6,7 +6,7 @@ on:
 
 jobs:
   validate:
-    runs-on: [self-hosted, macmini]
+    runs-on: instabox-medium
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
