@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated_at": "2026-11-23T10:00:00Z",
+  "updated_at": "2026-11-24T10:00:00Z",
   "packs": [
     {
       "id": "starter-dev-tools",
@@ -31,6 +31,18 @@
       "repo": "https://github.com/si-mods/gorex-registry.git",
       "subdir": "packs/lobe-icons",
       "entries": 110
+    }
+  ],
+  "themes": [
+    {
+      "id": "slate",
+      "kind": "theme",
+      "name": "Slate",
+      "description": "Cool slate grays for the window and the sidebar, light and dark, with a calm blue accent.",
+      "author": "si-mods",
+      "version": "0.1.0",
+      "repo": "https://github.com/si-mods/gorex-registry.git",
+      "subdir": "themes/slate"
     }
   ]
 }

@@ -31,5 +31,17 @@
       "subdir": "packs/lobe-icons",
       "entries": 110
     }
+  ],
+  "themes": [
+    {
+      "id": "slate",
+      "kind": "theme",
+      "name": "Slate",
+      "description": "Cool slate grays for the window and the sidebar, light and dark, with a calm blue accent.",
+      "author": "si-mods",
+      "version": "0.1.0",
+      "repo": "https://github.com/si-mods/gorex-registry.git",
+      "subdir": "themes/slate"
+    }
   ]
 }
