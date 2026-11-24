@@ -1,0 +1,84 @@
+{
+  "name": "Ayu Mirage",
+  "seeds": {
+    "light": {
+      "bgTop": "#f8f9fa",
+      "bgMid": "#f8f9fa",
+      "bgLow": "#f8f9fa",
+      "bgBottom": "#f8f9fa",
+      "bgTint": "#f8f9fa00",
+      "text": "#5c6166",
+      "textMuted": "#788597",
+      "textFaint": "#788597",
+      "iconMuted": "#828e9f",
+      "emptyMark": "#828e9f",
+      "busy": "#6cbf43",
+      "attention": "#eba400",
+      "done": "#478acc",
+      "exited": "#adaeb1",
+      "danger": "#e65050",
+      "accent": "#f29718",
+      "accentHover": "#ea9216",
+      "accentPressed": "#e18c16",
+      "panel": "#fafafa",
+      "field": "#fcfcfc",
+      "fieldBorder": "#021a3c18",
+      "surface": "#fafafa",
+      "surfaceHover": "#e6e8eb",
+      "surfacePressed": "#d5d9de",
+      "card": "#fcfcfc",
+      "cardFocused": "#ffffff",
+      "shadow": "#6b7d8f12",
+      "shadowFocused": "#6b7d8f1a",
+      "backdrop": "#6b7d8f1f"
+    },
+    "dark": {
+      "bgTop": "#1f2430",
+      "bgMid": "#1f2430",
+      "bgLow": "#1f2430",
+      "bgBottom": "#1f2430",
+      "bgTint": "#1f243000",
+      "text": "#cccac2",
+      "textMuted": "#707a8c",
+      "textFaint": "#707a8c",
+      "iconMuted": "#707a8c",
+      "emptyMark": "#707a8c",
+      "busy": "#87d96c",
+      "attention": "#ffcd66",
+      "done": "#80bfff",
+      "exited": "#6e7c8f",
+      "danger": "#ff6666",
+      "accent": "#ffcc66",
+      "accentHover": "#f9c55d",
+      "accentPressed": "#edbe5f",
+      "panel": "#282e3b",
+      "field": "#242936",
+      "fieldBorder": "#d3e3fc17",
+      "surface": "#282e3b",
+      "surfaceHover": "#313949",
+      "surfacePressed": "#384255",
+      "card": "#242936",
+      "cardFocused": "#282e3b",
+      "shadow": "#00000033",
+      "shadowFocused": "#0000004d"
+    }
+  },
+  "roles": {
+    "sideBar.tabActiveBackground": {
+      "light": "#6b7d8f24",
+      "dark": "#63759926"
+    },
+    "sideBar.tabHoverBackground": {
+      "light": "#6b7d8f1f",
+      "dark": "#69758c1f"
+    },
+    "sideBar.tabSeparator": {
+      "light": "#6b7d8f1f",
+      "dark": "#171b24"
+    }
+  },
+  "terminal": {
+    "light": "Ayu Light",
+    "dark": "Ayu Mirage"
+  }
+}

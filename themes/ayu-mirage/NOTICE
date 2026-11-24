@@ -1,0 +1,62 @@
+The colors of this theme come from ayu:
+
+- ayu-colors, the palette source (https://github.com/ayu-theme/ayu-colors),
+  themes/light.yaml, themes/dark.yaml and themes/mirage.yaml at commit
+  c6e86054896ef10c69ba899dc11fdad0e004d4d3 (package version 9.1.0), with the
+  values resolved as the npm package ayu@9.1.0 has them (dist/generated).
+- vscode-ayu, the VS Code theme (https://github.com/ayu-theme/vscode-ayu),
+  ayu-light.json, ayu-dark.json and ayu-mirage.json at commit
+  605c9c8504682854d77adc0b630742182a86676b (version 1.6.0).
+
+The terminal colors are Ghostty's bundled "Ayu", "Ayu Light" and "Ayu Mirage"
+themes; this pack names them and does not copy them.
+
+Both projects are under the MIT License, reproduced below.
+
+--- ayu-colors -------------------------------------------------------------
+
+MIT License
+
+Copyright (c) Konstantin Pschera <me@kons.ch> (kons.ch)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+--- vscode-ayu --------------------------------------------------------------
+
+MIT License
+
+Copyright (c) 2016 Ike Kurghinyan
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

@@ -1,0 +1,83 @@
+{
+  "name": "Ayu",
+  "seeds": {
+    "light": {
+      "bgTop": "#f8f9fa",
+      "bgMid": "#f8f9fa",
+      "bgLow": "#f8f9fa",
+      "bgBottom": "#f8f9fa",
+      "bgTint": "#f8f9fa00",
+      "text": "#5c6166",
+      "textMuted": "#788597",
+      "textFaint": "#788597",
+      "iconMuted": "#828e9f",
+      "emptyMark": "#828e9f",
+      "busy": "#6cbf43",
+      "attention": "#eba400",
+      "done": "#478acc",
+      "exited": "#adaeb1",
+      "danger": "#e65050",
+      "accent": "#f29718",
+      "accentHover": "#ea9216",
+      "accentPressed": "#e18c16",
+      "panel": "#fafafa",
+      "field": "#fcfcfc",
+      "fieldBorder": "#021a3c18",
+      "surface": "#fafafa",
+      "surfaceHover": "#e6e8eb",
+      "surfacePressed": "#d5d9de",
+      "card": "#fcfcfc",
+      "cardFocused": "#ffffff",
+      "shadow": "#6b7d8f12",
+      "shadowFocused": "#6b7d8f1a",
+      "backdrop": "#6b7d8f1f"
+    },
+    "dark": {
+      "bgTop": "#0d1017",
+      "bgMid": "#0d1017",
+      "bgLow": "#0d1017",
+      "bgBottom": "#0d1017",
+      "bgTint": "#0d101700",
+      "text": "#bfbdb6",
+      "textMuted": "#616b81",
+      "textFaint": "#616b81",
+      "iconMuted": "#5a6378",
+      "emptyMark": "#5a6378",
+      "busy": "#70bf56",
+      "attention": "#ffb454",
+      "done": "#73b8ff",
+      "exited": "#5a6673",
+      "danger": "#d95757",
+      "accent": "#e6b450",
+      "accentHover": "#deae4d",
+      "accentPressed": "#d6a74a",
+      "panel": "#141821",
+      "field": "#10141c",
+      "fieldBorder": "#c4d6fe15",
+      "surface": "#141821",
+      "surfaceHover": "#212732",
+      "surfacePressed": "#2b323f",
+      "card": "#10141c",
+      "cardFocused": "#141821",
+      "shadowFocused": "#00000080"
+    }
+  },
+  "roles": {
+    "sideBar.tabActiveBackground": {
+      "light": "#6b7d8f24",
+      "dark": "#47526640"
+    },
+    "sideBar.tabHoverBackground": {
+      "light": "#6b7d8f1f",
+      "dark": "#47526633"
+    },
+    "sideBar.tabSeparator": {
+      "light": "#6b7d8f1f",
+      "dark": "#1b1f29"
+    }
+  },
+  "terminal": {
+    "light": "Ayu Light",
+    "dark": "Ayu"
+  }
+}

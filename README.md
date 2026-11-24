@@ -16,10 +16,13 @@ A theme pack is a directory with one `theme.json`: a manifest of colors for GoRe
 {
   "name": "Slate",
   "seeds": { "light": { "accent": "#3b6ea8" }, "dark": { "accent": "#7fa7d9" } },
-  "roles": { "sideBar.tabActiveBackground": { "light": "#ffffffee", "dark": "#2c3542" } }
+  "roles": { "sideBar.tabActiveBackground": { "light": "#ffffffee", "dark": "#2c3542" } },
+  "terminal": { "light": "Ayu Light", "dark": "Ayu" }
 }
 ```
 
 - Seed keys are GoRex's seed names (`bgTop`, `text`, `panel`, `accent`, ...); a seed you leave out keeps GoRex's own. Role keys are `sideBar.*` role names. Values are `#rgb`, `#rgba`, `#rrggbb` or `#rrggbbaa`; a role may take `{"light", "dark"}`.
+- `terminal` is optional. It names a Ghostty theme for each appearance, as GoRex's terminal theme picker lists them (a theme Ghostty ships). It applies only when the user has not set `terminal.theme`. GoRex builds before the `terminal` key drop it with a warning and keep the terminal's colors.
+- A theme ported from another project carries that project's license in a `NOTICE` file in its folder.
 - Add an entry with `"kind": "theme"` to the `themes` list of `packs.json` and of `index.json`, not to `packs`: GoRex builds before theme packs read only `packs`.
 - `gorex pack install <id>` installs it as `<config>/themes/<id>.json`; `"appearance.theme": "<id>"` in `settings.json` selects it.

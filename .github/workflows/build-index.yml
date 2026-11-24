@@ -49,6 +49,7 @@ jobs:
               "sideBar.tabSeparator", "sideBar.tabHoverBackground",
               "sideBar.tabActiveBackground",
           }
+          TERM = re.compile(r'[^/\\,"\x00-\x1f\x7f]{1,64}')
           HEX = re.compile(r"^#([0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$")
           def color(v, where):
               if isinstance(v, dict):
@@ -67,7 +68,8 @@ jobs:
               m = pathlib.Path(t["subdir"]) / "theme.json"
               assert m.exists() and m.stat().st_size <= 65536, f"missing or large {m}"
               data = json.loads(m.read_text())
-              assert set(data) <= {"name", "seeds", "roles"}, f"{m}: unknown keys {set(data) - {'name', 'seeds', 'roles'}}"
+              keys = {"name", "seeds", "roles", "terminal"}
+              assert set(data) <= keys, f"{m}: unknown keys {set(data) - keys}"
               for app, seeds in data.get("seeds", {}).items():
                   assert app in ("light", "dark"), f"{m}: unknown appearance {app}"
                   for k, v in seeds.items():
@@ -77,5 +79,13 @@ jobs:
               for k, v in data.get("roles", {}).items():
                   assert k in ROLES, f"{m}: unknown role {k}"
                   color(v, f"{m}: roles.{k}")
+              # terminal names a Ghostty theme for each appearance: no path,
+              # comma, quote or control character. GoRex also drops a name
+              # that Ghostty's list of themes does not have.
+              term = data.get("terminal", {})
+              assert isinstance(term, dict), f"{m}: terminal is not an object"
+              for app, name in term.items():
+                  assert app in ("light", "dark"), f"{m}: terminal: unknown appearance {app}"
+                  assert isinstance(name, str) and TERM.fullmatch(name) and name not in (".", ".."), f"{m}: terminal.{app}: bad theme name {name!r}"
           print("Validated", len(ids), "theme(s)")
           PY
