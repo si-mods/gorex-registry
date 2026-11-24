@@ -68,11 +68,11 @@
       "id": "dafy-whale",
       "kind": "theme",
       "name": "Dafy Whale",
-      "description": "A blue ocean theme in light and dark: the window, sidebar and accent, Ghostty's Nord Light and Night Owl terminal themes, sea-surface glows, a whale watermark and a brand row. Ported from dafy-whale-theme; the fish images are credited in its NOTICE.",
+      "description": "A blue ocean theme in light and dark: the window, sidebar and accent, Ghostty's Nord Light and Night Owl terminal themes, sea-surface glows, a watermark drawing of a whale-girl character and a brand row. Ported from dafy-whale-theme; the fish images are credited in its NOTICE.",
       "author": "si-mods",
       "version": "0.1.0",
       "repo": "https://github.com/si-mods/gorex-theme-dafy-whale.git",
-      "ref": "24dcbfd80917e2c725bcd399b4b8877b19499de5"
+      "ref": "da1d34e066b3cb356f86a17aabb21991ba143f08"
     }
   ]
 }
