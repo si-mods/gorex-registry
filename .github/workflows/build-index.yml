@@ -6,7 +6,8 @@ on:
 
 jobs:
   validate:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, macmini]
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
       - name: Validate packs.json and index.json
@@ -27,4 +28,54 @@ jobs:
                       icon = pathlib.Path(p["subdir"]) / v["icon"]
                       assert icon.exists() and icon.stat().st_size <= 32768
           print("Validated", len(packs["packs"]), "pack(s)")
+          PY
+      - name: Validate theme packs
+        run: |
+          python3 - <<'PY'
+          import json, pathlib, re
+          # The seed and role names of GoRex's internal/theme
+          # (docs/DSK-008-theme.md). GoRex drops any other name at load.
+          SEEDS = {
+              "bgTop", "bgMid", "bgLow", "bgBottom", "bgTint",
+              "text", "textMuted", "textFaint", "iconMuted", "emptyMark",
+              "busy", "attention", "done", "exited", "danger",
+              "accent", "accentHover", "accentPressed",
+              "panel", "field", "fieldBorder", "surface", "surfaceHover", "surfacePressed",
+              "card", "cardFocused", "shadow", "shadowFocused", "backdrop", "pillTint",
+          }
+          ROLES = {
+              "sideBar.activeGroupBackground", "sideBar.activeGroupTabBackground",
+              "sideBar.activeGroupTabShadow", "sideBar.trackBackground",
+              "sideBar.tabSeparator", "sideBar.tabHoverBackground",
+              "sideBar.tabActiveBackground",
+          }
+          HEX = re.compile(r"^#([0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$")
+          def color(v, where):
+              if isinstance(v, dict):
+                  assert set(v) == {"light", "dark"}, f"{where}: want light and dark"
+                  for k in v:
+                      color(v[k], f"{where}.{k}")
+                  return
+              assert isinstance(v, str) and HEX.match(v), f"{where}: bad color {v!r}"
+          packs = json.loads(pathlib.Path("packs.json").read_text())
+          index = json.loads(pathlib.Path("index.json").read_text())
+          ids = [t["id"] for t in packs.get("themes", [])]
+          assert ids == [t["id"] for t in index.get("themes", [])], "index.json themes differ from packs.json"
+          for t in packs.get("themes", []):
+              assert re.fullmatch(r"[A-Za-z0-9._-]+", t["id"]) and t["id"] not in (".", ".."), f"bad id {t['id']!r}"
+              assert t.get("kind") == "theme", f"{t['id']}: kind must be theme"
+              m = pathlib.Path(t["subdir"]) / "theme.json"
+              assert m.exists() and m.stat().st_size <= 65536, f"missing or large {m}"
+              data = json.loads(m.read_text())
+              assert set(data) <= {"name", "seeds", "roles"}, f"{m}: unknown keys {set(data) - {'name', 'seeds', 'roles'}}"
+              for app, seeds in data.get("seeds", {}).items():
+                  assert app in ("light", "dark"), f"{m}: unknown appearance {app}"
+                  for k, v in seeds.items():
+                      assert k in SEEDS, f"{m}: unknown seed {k}"
+                      assert isinstance(v, str), f"{m}: seeds.{app}.{k} is not a string"
+                      color(v, f"{m}: seeds.{app}.{k}")
+              for k, v in data.get("roles", {}).items():
+                  assert k in ROLES, f"{m}: unknown role {k}"
+                  color(v, f"{m}: roles.{k}")
+          print("Validated", len(ids), "theme(s)")
           PY

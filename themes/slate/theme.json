@@ -1,0 +1,28 @@
+{
+  "name": "Slate",
+  "seeds": {
+    "light": {
+      "bgTop": "#e9edf2",
+      "bgMid": "#e3e8ee",
+      "bgLow": "#dfe4ea",
+      "bgBottom": "#d9dfe6",
+      "bgTint": "#c9d3e059",
+      "accent": "#3b6ea8",
+      "accentHover": "#35639a",
+      "accentPressed": "#2f588a"
+    },
+    "dark": {
+      "bgTop": "#1d232b",
+      "bgMid": "#1a1f26",
+      "bgLow": "#181c22",
+      "bgBottom": "#1b2027",
+      "bgTint": "#3a4a6040",
+      "accent": "#7fa7d9",
+      "accentHover": "#93b5e0",
+      "accentPressed": "#6c96cc"
+    }
+  },
+  "roles": {
+    "sideBar.tabActiveBackground": { "light": "#ffffffee", "dark": "#2c3542" }
+  }
+}
