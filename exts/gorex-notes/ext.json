@@ -1,0 +1,23 @@
+{
+  "id": "gorex-notes",
+  "name": "Notes",
+  "engine": "webview",
+  "api": 1,
+  "panes": [
+    {
+      "kind": "note",
+      "title": "Note",
+      "icon": "sticky-note",
+      "fields": ["note", "noteSize", "notePreview"],
+      "files": ["{note}.txt"],
+      "opaque_tiled": false
+    }
+  ],
+  "storage": { "dir": "notes" },
+  "permissions": ["state", "storage", "env"],
+  "commands": [
+    { "id": "new", "title": "New Note Tab", "kind": "note", "placement": "tab" },
+    { "id": "split", "title": "Split with Note", "kind": "note", "placement": "split" },
+    { "id": "preview", "title": "Toggle Note Preview", "event": "toggle-preview" }
+  ]
+}
