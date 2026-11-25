@@ -68,7 +68,8 @@ jobs:
           sys.path.insert(0, "scripts")
           import theme_assets
           # The seed and role names of GoRex's internal/theme
-          # (docs/DSK-008-theme.md). GoRex drops any other name at load.
+          # (docs/DSK-008-theme.md, docs/DSK-012-theme-shaders.md). GoRex
+          # drops any other name at load.
           SEEDS = {
               "bgTop", "bgMid", "bgLow", "bgBottom", "bgTint",
               "text", "textMuted", "textFaint", "iconMuted", "emptyMark",
@@ -82,6 +83,8 @@ jobs:
               "sideBar.activeGroupTabShadow", "sideBar.trackBackground",
               "sideBar.tabSeparator", "sideBar.tabHoverBackground",
               "sideBar.tabActiveBackground",
+              "titleBar.background", "sideBar.background",
+              "paneHeader.background", "button.background",
           }
           TERM = re.compile(r'[^/\\,"\x00-\x1f\x7f]{1,64}')
           HEX = re.compile(r"^#([0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$")
@@ -103,7 +106,12 @@ jobs:
               m = root / "theme.json"
               assert m.exists() and not m.is_symlink() and m.stat().st_size <= 65536, f"missing or large {m}"
               data = json.loads(m.read_text(encoding="utf-8"))
-              keys = {"name", "seeds", "roles", "terminal", "assets", "ambience", "mascot", "brand", "ticker"}
+              # The keys GoRex's Parse knows. ambience, mascot, brand and
+              # ticker stay allowed: GoRex v0.62 drops them with an
+              # unknown-key warning, so the registry ignores them too.
+              keys = {"name", "seeds", "roles", "terminal", "sidebar", "assets",
+                      "metrics", "glass", "shaders", "description",
+                      "ambience", "mascot", "brand", "ticker"}
               assert set(data) <= keys, f"{m}: unknown keys {set(data) - keys}"
               for app, seeds in data.get("seeds", {}).items():
                   assert app in ("light", "dark"), f"{m}: unknown appearance {app}"
@@ -122,7 +130,8 @@ jobs:
               for app, name in term.items():
                   assert app in ("light", "dark"), f"{m}: terminal: unknown appearance {app}"
                   assert isinstance(name, str) and TERM.fullmatch(name) and name not in (".", ".."), f"{m}: terminal.{app}: bad theme name {name!r}"
-              # The images and the ambience of docs/DSK-010-theme-ambience.md.
+              # The asset files and shader references of
+              # docs/DSK-012-theme-shaders.md.
               theme_assets.check(data, root, str(m))
           print("Validated", len(ids), "theme(s)")
           PY
