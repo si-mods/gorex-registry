@@ -104,6 +104,16 @@
       "version": "1.0.0",
       "repo": "https://github.com/si-mods/gorex-registry.git",
       "subdir": "exts/gorex-notes"
+    },
+    {
+      "id": "gorex-browser",
+      "kind": "extension",
+      "name": "Browser",
+      "description": "Web pages in a pane: an address field above an untrusted web slot, its URL kept in the layout.",
+      "author": "si-mods",
+      "version": "1.0.0",
+      "repo": "https://github.com/si-mods/gorex-registry.git",
+      "subdir": "exts/gorex-browser"
     }
   ]
 }
