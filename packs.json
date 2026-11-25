@@ -67,11 +67,11 @@
       "id": "dafy-whale",
       "kind": "theme",
       "name": "Dafy Whale",
-      "description": "A blue ocean theme in light and dark: the window, sidebar and accent, and Ghostty's Nord Light and Night Owl terminal themes. Ported from dafy-whale-theme.",
+      "description": "A blue ocean theme in light and dark: the window, sidebar and accent, sea glows and a whale watermark drawn by its own shader, and Ghostty's Nord Light and Night Owl terminal themes. Ported from dafy-whale-theme.",
       "author": "si-mods",
-      "version": "0.2.0",
+      "version": "0.3.0",
       "repo": "https://github.com/si-mods/gorex-theme-dafy-whale.git",
-      "ref": "b938738453582b52dfa44865443137413a43f525"
+      "ref": "2e89a563b19d20b852bd7be6374f2dee1b1ccd48"
     },
     {
       "id": "gorex-theme-blue-window",
