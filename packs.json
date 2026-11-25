@@ -92,6 +92,16 @@
       "version": "0.2.0",
       "repo": "https://github.com/si-mods/gorex-theme-potion-workshop.git",
       "ref": "26b2843587794a79ee7a3e269934f5fd5264d748"
+    },
+    {
+      "id": "gorex-theme-windows-xp",
+      "kind": "theme",
+      "name": "Windows XP",
+      "description": "Windows XP Luna chrome: glossy blue title bar, XP buttons with focus/hover rings, Luna dropdowns and window controls.",
+      "author": "si-mods",
+      "version": "0.1.0",
+      "repo": "https://github.com/si-mods/gorex-theme-windows-xp.git",
+      "ref": "d4efd785e5bc3599ff3659d043cc033783dd793b"
     }
   ],
   "extensions": [
