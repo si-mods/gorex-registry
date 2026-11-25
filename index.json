@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated_at": "2026-11-24T12:30:00Z",
+  "updated_at": "2026-11-25T12:00:00Z",
   "packs": [
     {
       "id": "starter-dev-tools",
@@ -73,6 +73,26 @@
       "version": "0.2.0",
       "repo": "https://github.com/si-mods/gorex-theme-dafy-whale.git",
       "ref": "b938738453582b52dfa44865443137413a43f525"
+    },
+    {
+      "id": "gorex-theme-blue-window",
+      "kind": "theme",
+      "name": "Blue Window",
+      "description": "XP-style blues, soft clouds and a waving robot, all drawn by shaders, with a light that follows the pointer. Light only. Needs GoRex 0.62.0 or later.",
+      "author": "si-mods",
+      "version": "0.2.0",
+      "repo": "https://github.com/si-mods/gorex-theme-blue-window.git",
+      "ref": "ec7526369a7c219033436aa72622595265061860"
+    },
+    {
+      "id": "gorex-theme-potion-workshop",
+      "kind": "theme",
+      "name": "Potion Workshop",
+      "description": "Parchment, gold motes, potion bottles and a slime, all drawn by shaders, in light and dark. Needs GoRex 0.62.0 or later.",
+      "author": "si-mods",
+      "version": "0.2.0",
+      "repo": "https://github.com/si-mods/gorex-theme-potion-workshop.git",
+      "ref": "26b2843587794a79ee7a3e269934f5fd5264d748"
     }
   ]
 }
