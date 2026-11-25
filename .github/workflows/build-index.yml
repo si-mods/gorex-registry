@@ -39,8 +39,10 @@ jobs:
           python3 - <<'PY'
           import json, pathlib, re, subprocess
           REGISTRY = "https://github.com/si-mods/gorex-registry.git"
-          packs = {t["id"]: t for t in json.loads(pathlib.Path("packs.json").read_text()).get("themes", [])}
-          for t in json.loads(pathlib.Path("index.json").read_text()).get("themes", []):
+          idx = json.loads(pathlib.Path("index.json").read_text())
+          src = json.loads(pathlib.Path("packs.json").read_text())
+          packs = {t["id"]: t for t in src.get("themes", []) + src.get("extensions", [])}
+          for t in idx.get("themes", []) + idx.get("extensions", []):
               if t.get("repo") == REGISTRY:
                   continue
               where = t.get("id")
@@ -134,4 +136,27 @@ jobs:
               # docs/DSK-012-theme-shaders.md.
               theme_assets.check(data, root, str(m))
           print("Validated", len(ids), "theme(s)")
+          PY
+      - name: Validate extension packs
+        run: |
+          python3 - <<'PY'
+          import json, pathlib, re
+          packs = json.loads(pathlib.Path("packs.json").read_text())
+          index = json.loads(pathlib.Path("index.json").read_text())
+          ids = [e["id"] for e in packs.get("extensions", [])]
+          assert ids == [e["id"] for e in index.get("extensions", [])], "index.json extensions differ from packs.json"
+          for e in packs.get("extensions", []):
+              assert re.fullmatch(r"[a-z0-9][a-z0-9._-]{0,62}", e["id"]), f"bad id {e['id']!r}"
+              assert e.get("kind") == "extension", f"{e['id']}: kind must be extension"
+              assert re.fullmatch(r"[0-9a-f]{40}", e.get("ref", "") or "0" * 40) or "subdir" in e, \
+                  f"{e['id']}: a pack of another repo must pin a full commit SHA"
+              root = pathlib.Path(e["subdir"]) if "subdir" in e else pathlib.Path(".external") / e["id"]
+              m = root / "ext.json"
+              assert m.exists() and m.stat().st_size <= 65536, f"missing or large {m}"
+              data = json.loads(m.read_text(encoding="utf-8"))
+              assert data["id"] == e["id"], f"{m}: id {data['id']!r} != {e['id']!r}"
+              assert data.get("engine") == "webview", f"{m}: unknown engine"
+              assert data.get("panes"), f"{m}: declares no pane kind"
+              assert (root / "index.html").exists(), f"missing index.html in {root}"
+          print("Validated", len(ids), "extension(s)")
           PY

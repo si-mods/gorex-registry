@@ -8,6 +8,14 @@ Static index of community packs for GoRex: program icon packs (`docs/MOD-012-pro
 2. Add an entry to `packs.json` and open a pull request.
 3. GitHub Actions validates every pack and rebuilds `index.json` on `main`.
 
+## Adding an Extension Pack
+
+An extension pack adds pane kinds to GoRex (`docs/EXT-001-extension-panes.md` of si-mods/gorex): a directory with an `ext.json` manifest and an `index.html` page, optionally more assets. Official extension packs live under `exts/`; a pack of its own repo is listed with `repo` and a pinned `ref`, as a theme is.
+
+1. Create the pack directory (or its own repo) with a valid `ext.json` (`engine: "webview"`, one or more `panes` kinds).
+2. Add an entry to `packs.json`'s `extensions` and to `index.json`'s, and open a pull request.
+3. GitHub Actions checks the manifest and that `index.html` is there.
+
 ## Adding a Theme
 
 A theme pack is a directory with one `theme.json`: a manifest of colors for GoRex's own window, as data only (`docs/DSK-008-theme.md`).

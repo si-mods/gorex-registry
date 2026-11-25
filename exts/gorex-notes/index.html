@@ -1,0 +1,178 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Note</title>
+<style>
+:root { color-scheme: light dark; }
+html, body { margin: 0; height: 100%; background: transparent; }
+body {
+	font: 13px/1.55 ui-monospace, SFMono-Regular, Menlo, monospace;
+	color: var(--text, canvastext);
+	display: flex; flex-direction: column;
+}
+#edit {
+	flex: 1; width: 100%; box-sizing: border-box; resize: none;
+	border: 0; outline: none; background: transparent; color: inherit;
+	font: inherit; padding: 12px 14px;
+}
+#preview {
+	flex: 1; overflow: auto; padding: 4px 18px 12px; display: none;
+	font-family: -apple-system, "Segoe UI", sans-serif; word-wrap: break-word;
+}
+body.preview #edit { display: none; }
+body.preview #preview { display: block; }
+#toggle {
+	position: absolute; top: 6px; right: 10px;
+	border: 1px solid var(--border, rgba(128,128,128,.4)); border-radius: 6px;
+	background: var(--surface, rgba(128,128,128,.12)); color: inherit;
+	font: 11px -apple-system, sans-serif; padding: 2px 8px; cursor: pointer;
+}
+#toggle:hover { background: var(--hover, rgba(128,128,128,.25)); }
+#preview h1, #preview h2, #preview h3 { margin: .8em 0 .3em; }
+#preview h1 { font-size: 1.5em; } #preview h2 { font-size: 1.25em; } #preview h3 { font-size: 1.1em; }
+#preview p { margin: .4em 0; }
+#preview ul, #preview ol { margin: .3em 0; padding-left: 1.6em; }
+#preview blockquote { margin: .4em 0; padding-left: .9em; border-left: 3px solid var(--border, rgba(128,128,128,.4)); color: var(--muted, gray); }
+#preview code { background: var(--surface, rgba(128,128,128,.15)); border-radius: 4px; padding: 0 .3em; font-size: .92em; }
+#preview pre { background: var(--surface, rgba(128,128,128,.15)); border-radius: 6px; padding: 8px 10px; overflow: auto; }
+#preview pre code { background: none; padding: 0; }
+#preview hr { border: 0; border-top: 1px solid var(--border, rgba(128,128,128,.4)); margin: .8em 0; }
+#preview a { color: var(--accent, LinkText); }
+</style>
+</head>
+<body>
+<button id="toggle">Preview</button>
+<textarea id="edit" placeholder="Write a note…" spellcheck="false"></textarea>
+<div id="preview"></div>
+<script>
+const call = (m, ...a) => mygo.call("Extension." + m, ...a);
+const edit = document.getElementById("edit");
+const previewEl = document.getElementById("preview");
+const toggleBtn = document.getElementById("toggle");
+
+let state = { note: "", noteSize: 0, notePreview: false };
+let saving = null, dirty = false;
+
+function esc(s) {
+	return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+function inline(s) {
+	s = esc(s);
+	s = s.replace(/`([^`]+)`/g, "<code>$1</code>");
+	s = s.replace(/\[([^\]]*)\]\(([^)\s]+)\)/g, (m, t, u) =>
+		/^https?:\/\//.test(u) ? `<a href="${u}">${t}</a>` : t);
+	s = s.replace(/\*\*([^*]+)\*\*/g, "<b>$1</b>");
+	s = s.replace(/__([^_]+)__/g, "<b>$1</b>");
+	s = s.replace(/\*([^*]+)\*/g, "<i>$1</i>");
+	s = s.replace(/(^|\W)_([^_]+)_/g, "$1<i>$2</i>");
+	s = s.replace(/~~([^~]+)~~/g, "<s>$1</s>");
+	return s;
+}
+function renderMarkdown(src) {
+	const out = []; let code = null, list = null, para = [];
+	const openList = k => { if (list !== k) { closeList(); out.push(`<${k}>`); list = k; } };
+	const closeList = () => { if (list) { out.push(`</${list}>`); list = null; } };
+	const closePara = () => { if (para.length) { out.push(`<p>${inline(para.join(" "))}</p>`); para = []; } };
+	for (const raw of src.split("\n")) {
+		const line = raw.replace(/\s+$/, "");
+		if (/^```/.test(line)) {
+			closeList(); closePara();
+			if (code === null) { code = []; } else { out.push(`<pre><code>${esc(code.join("\n"))}</code></pre>`); code = null; }
+			continue;
+		}
+		if (code !== null) { code.push(raw); continue; }
+		const h = /^(#{1,6})\s+(.*)$/.exec(line);
+		if (h) { closeList(); closePara(); out.push(`<h${h[1].length}>${inline(h[2])}</h${h[1].length}>`); continue; }
+		if (/^\s*([-*_])\s*\1\s*\1[\s\1]*$/.test(line) || /^\s*---+\s*$/.test(line)) { closeList(); closePara(); out.push("<hr>"); continue; }
+		const q = /^>\s?(.*)$/.exec(line);
+		if (q) { closeList(); closePara(); out.push(`<blockquote>${inline(q[1])}</blockquote>`); continue; }
+		const ul = /^\s*[-*+]\s+(.*)$/.exec(line);
+		if (ul) { closePara(); openList("ul"); out.push(`<li>${inline(ul[1])}</li>`); continue; }
+		const ol = /^\s*\d+\.\s+(.*)$/.exec(line);
+		if (ol) { closePara(); openList("ol"); out.push(`<li>${inline(ol[1])}</li>`); continue; }
+		closeList();
+		if (line.trim() === "") { closePara(); continue; }
+		para.push(line.trim());
+	}
+	closeList(); closePara();
+	if (code !== null) out.push(`<pre><code>${esc(code.join("\n"))}</code></pre>`);
+	return out.join("");
+}
+
+// The pane's title is the note's first line, its markdown marks off, as
+// the note pane's was.
+function noteTitle(text) {
+	const first = (text.match(/\S[\s\S]*/) || [""])[0].split("\n")[0].trim()
+		.replace(/^(#{1,6}\s+|>\s*|[-*+]\s+|\d+\.\s+)/, "");
+	return first.length > 40 ? first.slice(0, 40) + "…" : first;
+}
+function syncTitle() {
+	document.title = noteTitle(edit.value) || "Note";
+}
+
+function applyState() {
+	document.body.classList.toggle("preview", !!state.notePreview);
+	toggleBtn.textContent = state.notePreview ? "Edit" : "Preview";
+	const size = state.noteSize > 0 ? state.noteSize : 13;
+	edit.style.fontSize = previewEl.style.fontSize = size + "px";
+	if (state.notePreview) previewEl.innerHTML = renderMarkdown(edit.value);
+}
+
+async function save() {
+	if (!dirty || !state.note) return;
+	dirty = false;
+	try { await call("WriteFile", state.note + ".txt", edit.value); }
+	catch (e) { dirty = true; }
+}
+let timer = null;
+edit.addEventListener("input", () => {
+	dirty = true; syncTitle();
+	clearTimeout(timer);
+	timer = setTimeout(save, 400);
+});
+document.addEventListener("visibilitychange", () => { if (document.hidden) save(); });
+addEventListener("pagehide", save);
+
+async function toggle() {
+	state.notePreview = !state.notePreview;
+	applyState();
+	try { await call("SetState", { notePreview: state.notePreview }); } catch (e) {}
+}
+toggleBtn.addEventListener("click", toggle);
+mygo.on("ext.command", ev => { if (ev === "toggle-preview") toggle(); });
+
+mygo.on("ext.state", s => {
+	// Another client changed the pane's fields: follow size and preview;
+	// a different note file is reloaded.
+	const newFile = s.note && s.note !== state.note;
+	state = { ...state, ...s };
+	applyState();
+	if (newFile) load();
+});
+
+async function load() {
+	try {
+		edit.value = await call("ReadFile", state.note + ".txt");
+	} catch (e) { edit.value = ""; }
+	syncTitle(); applyState();
+}
+
+(async () => {
+	try {
+		state = { ...state, ...(await call("State")) };
+		const env = await call("Env");
+		const c = env.colors || {};
+		const r = document.documentElement.style;
+		if (c.text) r.setProperty("--text", c.text);
+		if (c.muted || c.textMuted) r.setProperty("--muted", c.textMuted);
+		if (c.surfaceHover) r.setProperty("--surface", c.surfaceHover);
+		if (c.surfacePressed) r.setProperty("--hover", c.surfacePressed);
+		if (c.panelBorder) r.setProperty("--border", c.panelBorder);
+		if (c.accent) r.setProperty("--accent", c.accent);
+	} catch (e) {}
+	load();
+})();
+</script>
+</body>
+</html>

@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "updated_at": "2026-11-25T12:00:00Z",
+  "updated_at": "2026-11-25T11:59:06Z",
   "packs": [
     {
       "id": "starter-dev-tools",
@@ -93,6 +93,18 @@
       "version": "0.2.0",
       "repo": "https://github.com/si-mods/gorex-theme-potion-workshop.git",
       "ref": "26b2843587794a79ee7a3e269934f5fd5264d748"
+    }
+  ],
+  "extensions": [
+    {
+      "id": "gorex-notes",
+      "kind": "extension",
+      "name": "Notes",
+      "description": "Sticky notes: a pane of free text with a Markdown preview, its file kept in GoRex's notes directory.",
+      "author": "si-mods",
+      "version": "1.0.0",
+      "repo": "https://github.com/si-mods/gorex-registry.git",
+      "subdir": "exts/gorex-notes"
     }
   ]
 }
