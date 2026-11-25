@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Browser</title>
+<style>
+:root { color-scheme: light dark; }
+html, body { margin: 0; height: 100%; background: transparent; }
+body {
+	display: flex; align-items: center; gap: 4px;
+	padding: 0 8px; box-sizing: border-box;
+	font: 12.5px -apple-system, "Segoe UI", sans-serif;
+	color: var(--text, canvastext);
+}
+button {
+	border: 0; border-radius: 5px; background: transparent; color: inherit;
+	font: 14px/1 ui-monospace, monospace; padding: 3px 6px; cursor: pointer;
+}
+button:hover { background: var(--hover, rgba(128,128,128,.25)); }
+#addr {
+	flex: 1; min-width: 0; border: 1px solid var(--border, rgba(128,128,128,.4));
+	border-radius: 6px; background: var(--surface, rgba(128,128,128,.12));
+	color: inherit; font: inherit; padding: 3px 8px; outline: none;
+}
+#addr:focus { border-color: var(--accent, Highlight); }
+</style>
+</head>
+<body>
+<button id="back" title="Back">&#x2039;</button>
+<button id="fwd" title="Forward">&#x203a;</button>
+<button id="reload" title="Reload">&#x21bb;</button>
+<input id="addr" placeholder="Search or enter address" spellcheck="false" autocomplete="off">
+<script>
+const call = (m, ...a) => mygo.call("Extension." + m, ...a);
+const addr = document.getElementById("addr");
+
+// The field shows the page's URL; typing keeps what its user wrote, as
+// the old header's editing flag did. Focus alone does not.
+let editing = false;
+addr.addEventListener("input", () => { editing = true; });
+function show(u) {
+	if (!editing && u !== "about:blank") {
+		addr.value = u;
+	}
+}
+function nav(u) { call("WebNavigate", u); }
+
+document.getElementById("back").onclick = () => call("WebBack");
+document.getElementById("fwd").onclick = () => call("WebForward");
+document.getElementById("reload").onclick = () => call("WebReload");
+addr.addEventListener("keydown", ev => {
+	if (ev.key === "Enter") { editing = false; nav(addr.value); addr.blur(); }
+	if (ev.key === "Escape") { editing = false; addr.blur(); show(current); }
+});
+addr.addEventListener("blur", () => { editing = false; show(current); });
+
+let current = "";
+call("State").then(s => { if (s && s.url) { current = s.url; show(current); } });
+call("WebURL").then(u => { if (u) { current = u; show(current); } });
+mygo.on("ext.web", v => { if (v && v.url) { current = v.url; show(current); } });
+mygo.on("ext.state", s => { if (s && s.url && s.url !== current) { current = s.url; show(current); } });
+
+// A new pane's keyboard is its address field.
+addr.focus();
+call("Env").then(env => {
+	if (!env || !env.colors) { return; }
+	const c = env.colors, r = document.documentElement.style;
+	r.setProperty("--text", c.text); r.setProperty("--border", c.panelBorder);
+	r.setProperty("--surface", c.surface); r.setProperty("--hover", c.surfaceHover);
+	r.setProperty("--accent", c.accent);
+});
+</script>
+</body>
+</html>

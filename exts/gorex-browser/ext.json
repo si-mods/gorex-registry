@@ -1,0 +1,21 @@
+{
+  "id": "gorex-browser",
+  "name": "Browser",
+  "engine": "webview",
+  "api": 1,
+  "panes": [
+    {
+      "kind": "browser",
+      "title": "Browser",
+      "icon": "globe",
+      "fields": ["url", "id"],
+      "chrome_height": 30
+    }
+  ],
+  "permissions": ["state", "web", "env"],
+  "slots": ["web"],
+  "commands": [
+    { "id": "new", "title": "New Browser Tab", "kind": "browser", "placement": "tab" },
+    { "id": "split", "title": "Split with Browser", "kind": "browser", "placement": "split" }
+  ]
+}
