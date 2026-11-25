@@ -27,10 +27,10 @@ A theme pack is a directory with one `theme.json`: a manifest of colors for GoRe
 - Add an entry with `"kind": "theme"` to the `themes` list of `packs.json` and of `index.json`, not to `packs`: GoRex builds before theme packs read only `packs`.
 - `gorex pack install <id>` installs it as `<config>/themes/<id>.json`; `"appearance.theme": "<id>"` in `settings.json` selects it.
 
-### A theme with images, in its own repo
+### A theme with images and shaders, in its own repo
 
-A theme can carry images and ambience: glows, a watermark, a brand row and later moving layers and a mascot (`docs/DSK-010-theme-ambience.md`). Such a pack lives in a public repo of its own, not in this registry: its root holds `theme.json`, an `assets/` folder, a `NOTICE` and each license text the `NOTICE` names.
+A theme can carry images and `.kage` shader sources: its shaders draw the window's background and the faces of roles, and read up to four image assets each (`docs/DSK-012-theme-shaders.md` of si-mods/gorex). Such a pack lives in a public repo of its own, not in this registry: its root holds `theme.json`, an `assets/` folder, a `NOTICE` and each license text the `NOTICE` names.
 
 - List it with `repo` (an https clone URL ending in `.git`), no `subdir`, and `ref`: the full 40-character commit SHA to install. A branch or a tag is refused, as its owner can move it. GoRex installs that commit and nothing else, so a later push to the pack's repo changes nothing until a registry PR moves `ref`.
-- CI clones the repo at `ref` and checks the files users get: the caps of DSK-010 (16 assets, 1 MiB a file, 4 MiB a pack, PNG, GIF and APNG up to 1024 px, 512 px and 64 frames when animated, SVG for `brand.icon` only), the asset names the manifest uses, a `NOTICE` for a pack with assets, and each `LICENSE*` file the `NOTICE` names. `scripts/theme_assets.py` holds the checks.
+- CI clones the repo at `ref` and checks the files users get: the caps GoRex enforces (24 assets, a `.kage` source of 16 KiB, PNG, GIF and APNG images of 1 MiB and 1024 px — or 2 MiB and 2048 px for an image only shaders read — animated images of 512 px, 64 frames and 16 MiB decoded, 8 MiB a pack), the asset names the manifest uses, a `NOTICE` for a pack with assets, and each `LICENSE*` file the `NOTICE` names. `scripts/theme_assets.py` holds the checks.
 - List a pack only when the license of each asset allows redistribution.

@@ -1,11 +1,15 @@
-"""Checks the keys of a theme pack that GoRex's docs/DSK-010-theme-ambience.md
-adds: assets, ambience, mascot, brand and ticker, against the caps of its
-Caps table, and the asset files and license files of the pack.
+"""Checks the asset files of a theme pack and the manifest keys that name
+them: `assets`, which names the files of the pack's assets folder, and
+`shaders`, whose layers name the shader sources and the images they read
+(docs/DSK-012-theme-shaders.md of si-mods/gorex). Also checks the NOTICE
+and license files of the pack.
 
 GoRex applies the same caps at install and at each load, and drops what
-fails. The registry refuses a pack that fails them, so that users get what
-the review saw. A check reads the headers of the images; it decodes no
-pixels.
+fails them (internal/theme/assets.go, internal/theme/parse.go and
+internal/theme/shaders.go of si-mods/gorex). The registry refuses a pack
+that fails them, so that users get what the review saw. A check reads the
+headers of the images; it decodes no pixels and compiles no shader
+source.
 """
 
 import os
@@ -13,18 +17,56 @@ import pathlib
 import re
 import struct
 
+# An asset name: letters, digits, '-' and '_' (validAssetName). An asset
+# file: a theme name's characters with no leading '.', not "." or ".."
+# and not a "*.json" name (validAssetFile over ValidName).
 NAME = re.compile(r"[A-Za-z0-9_-]{1,64}")
-FILE = re.compile(r"[A-Za-z0-9_-][A-Za-z0-9._-]*")
-HEX = re.compile(r"^#([0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$")
-ANCHORS = {"topLeft", "topRight", "bottomLeft", "bottomRight", "center"}
+FILE = re.compile(r"[A-Za-z0-9._-]+")
 
-MAX_FILE = 1 << 20
-MAX_PACK = 4 << 20
-MAX_STILL_SIDE = 1024
-MAX_ANIM_SIDE = 512
-MAX_FRAMES = 64
-MAX_ANIM_DECODED = 16 << 20
+# The caps of an asset file (internal/theme/assets.go).
+MAX_ASSETS = 24           # the most names the assets key keeps
+MAX_FILE = 1 << 20        # a file that no shader reads: 1 MiB
+MAX_PACK = 8 << 20        # all files of a theme: 8 MiB
+MAX_STILL_SIDE = 1024     # an image that no shader reads, in pixels
+MAX_KAGE = 16 << 10       # a shader's source: 16 KiB
+MAX_SHADER_FILE = 2 << 20  # an image that only shaders read: 2 MiB
+MAX_SHADER_SIDE = 2048    # the same, in pixels
+MAX_ANIM_SIDE = 512       # an animated image, in pixels
+MAX_FRAMES = 64           # frames of an animated image
+MAX_ANIM_DECODED = 16 << 20  # bytes of an animated image's frames
+MAX_DECODED = 48 << 20    # bytes of a theme's decoded images
+
+# The caps of the shaders key (internal/theme/shaders.go).
+MAX_SHADER_IMAGES = 4
+MAX_SLOT_LAYERS = 4
+MAX_THEME_LAYERS = 16
+MAX_FACE_SHADERS = 8
+
+# The roles a face shader may fill (FaceRoles minus button.background,
+# which the widgets paint). The first five have a built-in flat color, so
+# they need no roles.<name> entry.
+BUILTIN_FACES = {
+    "sideBar.activeGroupBackground", "sideBar.activeGroupTabBackground",
+    "sideBar.trackBackground", "sideBar.tabHoverBackground",
+    "sideBar.tabActiveBackground",
+}
+FACE_SLOTS = BUILTIN_FACES | {
+    "titleBar.background", "sideBar.background", "paneHeader.background",
+}
+
 PNG = b"\x89PNG\r\n\x1a\n"
+
+
+def is_kage(file):
+    """Reports whether file names a shader source: a .kage file."""
+    return file.lower().endswith(".kage")
+
+
+def valid_file(v):
+    """Reports whether v may name a file of the assets folder."""
+    return (FILE.fullmatch(v) is not None and v not in (".", "..")
+            and not v.startswith(".")
+            and not (len(v) >= 5 and v[-5:].lower() == ".json"))
 
 
 def header(b):
@@ -68,184 +110,146 @@ def header(b):
                 raise AssertionError("bad GIF block")
         assert frames > 0, "GIF without an image"
         return "gif", w, h, frames
-    head = b[:1024].lstrip(b"\xef\xbb\xbf").lstrip()
-    if head.startswith(b"<") and b"<svg" in head:
-        return "svg", 0, 0, 1
-    raise AssertionError("not a PNG, GIF or SVG file")
+    raise AssertionError("not a PNG or GIF file")
 
 
-def check_image(b, where):
+def check_image(b, where, max_side):
+    """Checks an image's header: still images at most max_side pixels a
+    side, animated ones at the animated caps."""
     fmt, w, h, frames = header(b)
-    if fmt == "svg":
-        return fmt
     assert w > 0 and h > 0, f"{where}: empty image"
     if frames > 1:
         assert frames <= MAX_FRAMES, f"{where}: {frames} frames, more than {MAX_FRAMES}"
         assert w <= MAX_ANIM_SIDE and h <= MAX_ANIM_SIDE, f"{where}: animated image of {w}x{h} px, larger than {MAX_ANIM_SIDE}"
         assert w * h * 4 * frames <= MAX_ANIM_DECODED, f"{where}: animated image of more than 16 MiB decoded"
     else:
-        assert w <= MAX_STILL_SIDE and h <= MAX_STILL_SIDE, f"{where}: image of {w}x{h} px, larger than {MAX_STILL_SIDE}"
-    return fmt
+        assert w <= max_side and h <= max_side, f"{where}: image of {w}x{h} px, larger than {max_side}"
+    return w, h
 
 
-def color(v, where, max_alpha=None):
-    vals = [v] if not isinstance(v, dict) else [v.get("light"), v.get("dark")]
-    if isinstance(v, dict):
-        assert set(v) == {"light", "dark"}, f"{where}: want light and dark"
-    for c in vals:
-        assert isinstance(c, str) and HEX.match(c), f"{where}: bad color {c!r}"
-        if max_alpha is not None and len(c) in (5, 9):
-            a = int(c[4] * 2, 16) if len(c) == 5 else int(c[7:9], 16)
-            assert a <= round(max_alpha * 255), f"{where}: alpha above {max_alpha}"
+def slot_layers(slot, api, files):
+    """Returns the (source, images) pairs of a shader slot as GoRex parses
+    them, or None when the slot drops: a layer needs a .kage asset as its
+    source and image assets as its images."""
+    if api == 2 and isinstance(slot, list):
+        if not 1 <= len(slot) <= MAX_SLOT_LAYERS:
+            return None
+        layers = slot
+    else:
+        layers = [slot]
+    out = []
+    for layer in layers:
+        if not isinstance(layer, dict):
+            return None
+        src = layer.get("source")
+        if not isinstance(src, str) or src not in files or not is_kage(files[src]):
+            return None
+        names = layer.get("images")
+        if names is None:
+            names = []
+        if not isinstance(names, list):
+            return None
+        names = names[:MAX_SHADER_IMAGES]
+        for n in names:
+            if not isinstance(n, str) or n not in files or is_kage(files[n]):
+                return None
+        out.append((src, names))
+    return out
 
 
-def num(o, key, where, lo, hi, required=False):
-    if key not in o:
-        assert not required, f"{where}: missing {key}"
-        return
-    v = o[key]
-    assert isinstance(v, (int, float)) and not isinstance(v, bool), f"{where}.{key}: not a number"
-    assert lo <= v <= hi, f"{where}.{key}: {v} outside {lo} to {hi}"
-
-
-def text(s, where, n):
-    assert isinstance(s, str), f"{where}: not a string"
-    assert len(s) <= n, f"{where}: more than {n} characters"
-    bad = [c for c in s if ord(c) < 0x20 or 0x7F <= ord(c) < 0xA0 or ord(c) in (0x61C, 0x200E, 0x200F)
-           or 0x202A <= ord(c) <= 0x202E or 0x2066 <= ord(c) <= 0x2069]
-    assert not bad, f"{where}: control or bidirectional characters"
-
-
-def keys(o, where, known):
-    assert isinstance(o, dict), f"{where}: not an object"
-    assert set(o) <= known, f"{where}: unknown keys {sorted(set(o) - known)}"
+def shader_uses(data, files):
+    """Returns (sources, images): the asset names the shaders key of data
+    reads, as the layers of a parsed manifest give them (GoRex's
+    Manifest.uses). A slot GoRex drops reads nothing."""
+    sources, images = set(), set()
+    sh = data.get("shaders")
+    if not isinstance(sh, dict):
+        return sources, images
+    api = sh.get("api")
+    if isinstance(api, bool) or api not in (1, 2):
+        return sources, images
+    slots = []
+    if "background" in sh:
+        slots.append(slot_layers(sh["background"], api, files))
+    faces = sh.get("faces")
+    if isinstance(faces, dict):
+        roles = data.get("roles")
+        roles = roles if isinstance(roles, dict) else {}
+        kept = 0
+        for role in sorted(faces):
+            if role not in FACE_SLOTS or kept == MAX_FACE_SHADERS:
+                continue
+            if role not in BUILTIN_FACES:
+                v = roles.get(role)
+                if not (isinstance(v, str) or isinstance(v, dict) and {"light", "dark"} <= set(v)):
+                    continue  # a face shader needs the role's flat color
+            layers = slot_layers(faces[role], api, files)
+            if layers is not None:
+                slots.append(layers)
+                kept += 1
+    used = 0
+    for layers in slots:
+        if layers is None or used + len(layers) > MAX_THEME_LAYERS:
+            continue
+        used += len(layers)
+        for src, names in layers:
+            sources.add(src)
+            images.update(names)
+    return sources, images
 
 
 def check(data, root, where):
-    """Checks the DSK-010 keys of the manifest data of the pack at root."""
+    """Checks the asset keys of the manifest data of the pack at root."""
     root = pathlib.Path(root)
     # No link anywhere in the pack: not the assets folder, the NOTICE or a
     # license file, nor any other file. A link could point out of the pack.
-    for top, dirs, files in os.walk(root, followlinks=False):
+    for top, dirs, files_ in os.walk(root, followlinks=False):
         dirs[:] = [d for d in dirs if d != ".git" or pathlib.Path(top) != root]
-        for name in dirs + files:
+        for name in dirs + files_:
             assert not os.path.islink(os.path.join(top, name)), f"{where}: {os.path.relpath(os.path.join(top, name), root)} is a link"
     assets = data.get("assets", {})
-    keys(assets, f"{where}: assets", set(assets))
-    assert len(assets) <= 16, f"{where}: more than 16 assets"
-    files, sheets, formats = {}, set(), {}
+    assert isinstance(assets, dict), f"{where}: assets is not an object"
+    assert len(assets) <= MAX_ASSETS, f"{where}: more than {MAX_ASSETS} assets"
+    files = {}
     for name, v in assets.items():
         w = f"{where}: assets.{name}"
         assert NAME.fullmatch(name), f"{w}: bad name"
-        if isinstance(v, dict):
-            keys(v, w, {"file", "frames", "columns", "fps"})
-            num(v, "frames", w, 1, MAX_FRAMES, required=True)
-            num(v, "columns", w, 1, MAX_FRAMES)
-            num(v, "fps", w, 1, 30)
-            sheets.add(name)
-            v = v.get("file")
-        assert isinstance(v, str) and FILE.fullmatch(v) and v not in (".", ".."), f"{w}: bad file name {v!r}"
+        assert isinstance(v, str) and valid_file(v), f"{w}: bad file name {v!r}"
         files[name] = v
-    total = 0
+    _, images = shader_uses(data, files)
+    total = decoded = 0
+    seen = set()
     for name, f in files.items():
         p = root / "assets" / f
         w = f"{where}: assets.{name} ({f})"
         assert p.is_file() and not p.is_symlink(), f"{w}: missing, or not a regular file"
         size = p.stat().st_size
-        assert size <= MAX_FILE, f"{w}: larger than 1 MiB"
-        total += size
-        formats[name] = check_image(p.read_bytes(), w)
-        assert not (name in sheets and formats[name] == "svg"), f"{w}: a sprite sheet is not an SVG"
-    assert total <= MAX_PACK, f"{where}: assets larger than 4 MiB"
-
-    def image(name, w, svg=False):
-        assert name in files, f"{w}: no asset {name!r}"
-        assert svg or formats[name] != "svg", f"{w}: an SVG is only for brand.icon"
-
-    amb = data.get("ambience", {})
-    keys(amb, f"{where}: ambience", {"glows", "images", "particles", "sprites"})
-    glows = amb.get("glows", [])
-    assert isinstance(glows, list) and len(glows) <= 4, f"{where}: ambience.glows: at most 4"
-    for i, g in enumerate(glows):
-        w = f"{where}: ambience.glows[{i}]"
-        keys(g, w, {"x", "y", "rx", "ry", "color"})
-        for k in ("x", "y"):
-            num(g, k, w, -0.5, 1.5)
-        for k in ("rx", "ry"):
-            num(g, k, w, 0.05, 1.5)
-        color(g.get("color"), f"{w}.color", max_alpha=0.4)
-    images = amb.get("images", [])
-    assert isinstance(images, list) and len(images) <= 2, f"{where}: ambience.images: at most 2"
-    for i, im in enumerate(images):
-        w = f"{where}: ambience.images[{i}]"
-        keys(im, w, {"asset", "anchor", "height", "opacity"})
-        image(im.get("asset"), w)
-        assert im.get("asset") not in sheets, f"{w}: a sprite sheet is not a still image"
-        assert im.get("anchor", "bottomRight") in ANCHORS, f"{w}: bad anchor"
-        num(im, "height", w, 0.05, 1024)
-        num(im, "opacity", w, 0, 0.25)
-    particles = amb.get("particles", [])
-    assert isinstance(particles, list) and len(particles) <= 2, f"{where}: ambience.particles: at most 2 layers"
-    count = 0
-    for i, pt in enumerate(particles):
-        w = f"{where}: ambience.particles[{i}]"
-        keys(pt, w, {"shape", "count", "size", "seconds", "color"})
-        assert pt.get("shape") == "bubble", f"{w}: bad shape"
-        num(pt, "count", w, 1, 40, required=True)
-        count += pt["count"]
-        for k, lo, hi in (("size", 2, 32), ("seconds", 4, 120)):
-            r = pt.get(k, [lo, lo])
-            assert isinstance(r, list) and len(r) == 2 and all(isinstance(x, (int, float)) and lo <= x <= hi for x in r), f"{w}.{k}: want two numbers from {lo} to {hi}"
-        if "color" in pt:
-            color(pt["color"], f"{w}.color", max_alpha=0.6)
-    assert count <= 40, f"{where}: more than 40 particles"
-    sprites = amb.get("sprites", [])
-    assert isinstance(sprites, list) and len(sprites) <= 8, f"{where}: ambience.sprites: at most 8"
-    for i, sp in enumerate(sprites):
-        w = f"{where}: ambience.sprites[{i}]"
-        keys(sp, w, {"asset", "y", "height", "seconds", "direction", "opacity", "mirror"})
-        image(sp.get("asset"), w)
-        num(sp, "y", w, 0, 1)
-        num(sp, "height", w, 16, 200)
-        num(sp, "seconds", w, 8, 600)
-        num(sp, "opacity", w, 0, 0.3)
-        assert sp.get("direction", "right") in ("left", "right", "up"), f"{w}: bad direction"
-        assert isinstance(sp.get("mirror", True), bool), f"{w}.mirror: not a boolean"
-
-    mascot = data.get("mascot")
-    if mascot is not None:
-        w = f"{where}: mascot"
-        keys(mascot, w, {"idle", "active", "height", "caption", "quotes", "popup"})
-        for k in ("idle", "active", "popup"):
-            if k in mascot:
-                image(mascot[k], f"{w}.{k}")
-        num(mascot, "height", w, 48, 128)
-        if "caption" in mascot:
-            text(mascot["caption"], f"{w}.caption", 24)
-        quotes = mascot.get("quotes", [])
-        assert isinstance(quotes, list) and len(quotes) <= 32, f"{w}.quotes: at most 32"
-        for i, q in enumerate(quotes):
-            text(q, f"{w}.quotes[{i}]", 80)
-
-    brand = data.get("brand")
-    if brand is not None:
-        w = f"{where}: brand"
-        keys(brand, w, {"icon", "wordmark"})
-        if "icon" in brand:
-            image(brand["icon"], f"{w}.icon", svg=True)
-            assert brand["icon"] not in sheets, f"{w}.icon: a sprite sheet is not an icon"
-        if "wordmark" in brand:
-            text(brand["wordmark"], f"{w}.wordmark", 24)
-
-    ticker = data.get("ticker")
-    if ticker is not None:
-        w = f"{where}: ticker"
-        keys(ticker, w, {"lines", "seconds"})
-        lines = ticker.get("lines", [])
-        assert isinstance(lines, list) and len(lines) <= 32, f"{w}.lines: at most 32"
-        for i, line in enumerate(lines):
-            text(line, f"{w}.lines[{i}]", 80)
-        num(ticker, "seconds", w, 6, 120)
+        if is_kage(f):
+            limit = MAX_KAGE
+        elif name in images:
+            limit = MAX_SHADER_FILE
+        else:
+            limit = MAX_FILE
+        assert size <= limit, f"{w}: larger than {limit >> 10} KiB"
+        if f not in seen:
+            seen.add(f)
+            total += size
+        b = p.read_bytes()
+        if is_kage(f):
+            # A .kage file is UTF-8 text with no NUL byte (checkKage);
+            # GoRex compiles it at load, which this check does not try.
+            try:
+                b.decode("utf-8")
+            except UnicodeDecodeError:
+                raise AssertionError(f"{w}: a .kage file is not UTF-8 text")
+            assert b"\x00" not in b, f"{w}: a .kage file is not UTF-8 text"
+        else:
+            max_side = MAX_SHADER_SIDE if name in images else MAX_STILL_SIDE
+            iw, ih = check_image(b, w, max_side)
+            if name in images:
+                decoded += iw * ih * 4
+                assert decoded <= MAX_DECODED, f"{where}: the theme's images pass {MAX_DECODED >> 20} MiB decoded"
+    assert total <= MAX_PACK, f"{where}: assets larger than {MAX_PACK >> 20} MiB"
 
     if files:
         notice = root / "NOTICE"
