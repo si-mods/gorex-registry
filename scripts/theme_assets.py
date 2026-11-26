@@ -40,7 +40,7 @@ MAX_DECODED = 48 << 20    # bytes of a theme's decoded images
 MAX_SHADER_IMAGES = 4
 MAX_SLOT_LAYERS = 4
 MAX_THEME_LAYERS = 16
-MAX_FACE_SHADERS = 12
+MAX_FACE_SHADERS = 16
 
 # The roles a face shader may fill (FaceRoles). The first five have a
 # built-in flat color, so they need no roles.<name> entry.
@@ -53,6 +53,7 @@ FACE_SLOTS = BUILTIN_FACES | {
     "titleBar.background", "sideBar.background", "paneHeader.background",
     "button.background", "dropdown.background", "segmented.background",
     "windowControl.background", "windowControl.closeBackground",
+    "checkbox.background", "radio.background",
 }
 
 PNG = b"\x89PNG\r\n\x1a\n"
