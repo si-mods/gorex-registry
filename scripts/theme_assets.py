@@ -51,7 +51,7 @@ BUILTIN_FACES = {
 }
 FACE_SLOTS = BUILTIN_FACES | {
     "titleBar.background", "sideBar.background", "paneHeader.background",
-    "button.background", "dropdown.background",
+    "button.background", "dropdown.background", "segmented.background",
     "windowControl.background", "windowControl.closeBackground",
 }
 
