@@ -88,7 +88,9 @@ jobs:
               "titleBar.background", "sideBar.background",
               "paneHeader.background", "button.background",
               "dropdown.background", "segmented.background", "windowControl.background",
-              "windowControl.closeBackground", "pane.border",
+              "windowControl.closeBackground", "checkbox.background", "radio.background",
+              "pane.border", "window.border", "menu.background", "menu.border",
+              "scrollbar.track", "scrollbar.thumb", "scrollbar.hover", "scrollbar.active",
           }
           TERM = re.compile(r'[^/\\,"\x00-\x1f\x7f]{1,64}')
           HEX = re.compile(r"^#([0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$")

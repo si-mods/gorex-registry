@@ -99,9 +99,9 @@
       "name": "Windows XP",
       "description": "Windows XP Luna chrome: glossy blue title bar, XP buttons with focus/hover rings, Luna dropdowns and window controls.",
       "author": "si-mods",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "repo": "https://github.com/si-mods/gorex-theme-windows-xp.git",
-      "ref": "317e175ac635ac0abd15cc780fcdb61ec12fa3cf"
+      "ref": "e43e5154b41a32f7abfc0611f5d38b562a001d9b"
     }
   ],
   "extensions": [
